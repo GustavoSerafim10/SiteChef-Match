@@ -38,16 +38,23 @@ Passagem: "Agora [Integrante 2] vai mostrar quem somos e a nossa solução."
 **Slide 7, Preciso de alguém hoje (1 min)**
 "Voltando ao garçom que faltou. O gerente aperta 'Preciso de alguém hoje', informa a função, o turno e a diária. Em minutos aparecem os profissionais disponíveis, por compatibilidade e distância, e o gerente escolhe."
 
-**Slide 8, Demonstração ao vivo (2 min 30 s)**
-Abra o link do slide e vá até a seção do app no site. Siga este roteiro:
-1. **Início**: "cada pessoa escolhe o seu perfil".
-2. **Preciso de alguém hoje**: escolha Garçom e aperte o botão laranja. Mostre a porcentagem e o motivo de cada candidato.
-3. **Vagas perto de mim**: mostre a nota do restaurante. "O profissional também avalia a empresa."
-4. **Cotação**: troque a ordenação entre preço e prazo.
-5. **Avaliar**: dê 5 estrelas e envie.
+**Slide 8, Demonstração ao vivo no app de verdade (2 min 30 s)**
+Abra **https://chef-match-app.vercel.app** e diga: "Isso não é protótipo: é o app no ar."
+1. Clique em **🍽️ Testar como restaurante**. Abre o painel do Bistrô Cerrado.
+2. Aperte **⚡ Preciso de alguém hoje**, escolha **Garçom**, diária R$ 180, e clique em **Buscar profissionais agora**. Mostre a lista "Disponíveis hoje" com a % e os motivos ("✓ Mesma função", "✓ Disponível hoje"...). Frase: "a IA recomenda, o gerente decide".
+3. Clique em **Convidar para hoje** no primeiro da lista.
+4. Vá em **Compras** → "Hortifruti da semana". Troque entre **Menor preço** e **Mais rápido** e clique em **Aprovar pedido**.
+5. Abra o **perfil de um profissional** e mostre a nota com a quantidade de avaliações.
 
-Feche com: "Tudo isso em um app só."
-**Plano B**, se a internet falhar: siga pelos slides seguintes, que mostram as mesmas telas em texto.
+Feche com: "Contratação, compras e reputação, tudo em um app só."
+**Plano B**, se a internet falhar: use o protótipo do site (seção "App"), que tem as mesmas telas, ou siga pelos próximos slides.
+
+**Antes de apresentar** (no terminal do VS Code, dentro da pasta `chef-match-app`):
+```bash
+node scripts/seed.mjs --disponibilidade   # profissionais "disponíveis hoje"
+node scripts/seed.mjs --cotacao           # nova cotação com 3 propostas para comparar
+```
+Contas de demonstração, se precisar entrar manualmente (senha `chefmatch2026`): `bistro.cerrado@chefmatch.app`, `lucas.mendes@chefmatch.app` e `carnes.nobre@chefmatch.app`.
 
 ## [Integrante 3]: reputação, RH, público, modelo e finanças
 
