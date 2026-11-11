@@ -19,6 +19,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -322,7 +323,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <a href="#financas">Finanças</a>
       <a href="#roadmap">Implantação</a>
     </nav>
-    <a class="btn btn-o btn-sm" href="#app">Ver o app</a>
+    <a class="btn btn-o btn-sm" href="https://chef-match-app.vercel.app" target="_blank" rel="noopener">Abrir o app ↗</a>
   </div>
 </header>
 
@@ -335,8 +336,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <h1>A gastronomia <em>se conecta</em> aqui.</h1>
       <p class="lead">O Chef's Match é o aplicativo que reúne quem trabalha, quem contrata e quem fornece para a gastronomia. Vagas, extras de última hora, fornecedores com cotação, capacitação e reputação verificada, tudo no mesmo lugar.</p>
       <div class="hero-ctas">
-        <a class="btn btn-o" href="#app">Experimentar o protótipo</a>
-        <a class="btn btn-g" href="#solucao">Conhecer os módulos</a>
+        <a class="btn btn-o" href="https://chef-match-app.vercel.app" target="_blank" rel="noopener">Abrir o app de verdade ↗</a>
+        <a class="btn btn-g" href="#app">Ver como funciona</a>
       </div>
       <div class="pillars-strip" aria-label="Pilares">
         <span class="chip">Talentos</span><span class="chip">Fornecedores</span><span class="chip">Academy</span><span class="chip">Negócios</span><span class="chip">Qualidade</span>
@@ -348,15 +349,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <dl>
         <dt>Função</dt><dd>Garçom</dd>
         <dt>Turno</dt><dd>18h – 00h</dd>
-        <dt>Local</dt><dd>Asa Sul, 404</dd>
+        <dt>Local</dt><dd>Bistrô Cerrado · Asa Sul</dd>
         <dt>Diária</dt><dd>R$ 180,00</dd>
         <dt>Tipo</dt><dd>Extra</dd>
       </dl>
       <div class="t-foot">
-        <div class="match-row"><span><span class="dot"></span>Lucas M. · 1,2 km</span><span class="pct">96%</span></div>
-        <div class="match-row"><span><span class="dot"></span>Ana P. · 2,8 km</span><span class="pct">92%</span></div>
-        <div class="match-row"><span><span class="dot"></span>Davi R. · 3,5 km</span><span class="pct">88%</span></div>
-        <div style="color:#7A7068;margin-top:4px">3 profissionais disponíveis em 4 min</div>
+        <div class="match-row"><span><span class="dot"></span>Lucas M. · Asa Sul</span><span class="pct">99%</span></div>
+        <div class="match-row"><span><span class="dot"></span>Ana P. · Asa Norte</span><span class="pct">77%</span></div>
+        <div class="match-row"><span><span class="dot"></span>Davi R. · Sudoeste</span><span class="pct">75%</span></div>
+        <div style="color:#7A7068;margin-top:4px">3 garçons disponíveis hoje</div>
       </div>
     </div>
   </div>
@@ -418,7 +419,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="mod-top"><div class="mod-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F07832" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.6"/></svg></div><span class="tag">RH · Núcleo</span></div>
         <h3>Chef's Match Talentos</h3>
         <p>Recrutamento, seleção e empregabilidade, com acompanhamento depois da contratação.</p>
-        <ul><li>Currículo digital gastronômico e especialidades</li><li>Vagas fixas, temporárias e extras</li><li>Busca por localização: vagas perto de mim</li><li>Agenda de entrevistas e etapas seletivas</li><li>Acompanhamento em 7, 30, 60 e 90 dias</li></ul>
+        <ul><li>Currículo digital gastronômico e especialidades</li><li>Vagas fixas, temporárias e extras</li><li>Vagas por região e por função</li><li>Agenda de entrevistas e etapas seletivas</li><li>Acompanhamento em 7, 30, 60 e 90 dias</li></ul>
       </article>
       <article class="mod">
         <div class="mod-top"><div class="mod-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F07832" stroke-width="2"><path d="M3 7h13v10H3zM16 10h3.5L22 13v4h-6"/><circle cx="7" cy="18" r="1.8"/><circle cx="18" cy="18" r="1.8"/></svg></div><span class="tag">Marketplace B2B</span></div>
@@ -461,17 +462,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="sec-head">
       <p class="eyebrow">Protótipo navegável</p>
       <h2>Toque e veja o app funcionando</h2>
-      <p class="lead">Escolha uma tela ao lado ou navegue pelo celular. Os dados são fictícios e servem para demonstração.</p>
+      <p class="lead">Este é o roteiro das telas, na mesma ordem do app. Para usar de verdade, abra o app e entre com uma das contas de demonstração.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:var(--ink-2);border:1px solid var(--orange);border-radius:var(--r);padding:22px 24px;margin:-12px 0 44px">
+      <div style="display:grid;gap:8px">
+        <p class="eyebrow">O app está no ar · senha das contas demo: chefmatch2026</p>
+        <p style="font-family:var(--f-mono);font-size:.9rem;color:#D9D2CB;line-height:1.7">Restaurante: <b style="color:#F6F2EE">bistro.cerrado@chefmatch.app</b><br>Profissional: <b style="color:#F6F2EE">lucas.mendes@chefmatch.app</b><br>Fornecedor: <b style="color:#F6F2EE">carnes.nobre@chefmatch.app</b></p>
+      </div>
+      <a class="btn btn-o" href="https://chef-match-app.vercel.app" target="_blank" rel="noopener">Abrir o app de verdade ↗</a>
     </div>
     <div class="proto">
       <div class="proto-side" id="screenBtns" role="group" aria-label="Telas do app">
         <button class="screen-btn" data-go="home" aria-pressed="true"><span class="n">01</span><span><b>Início</b><small>Profissional, empresa ou fornecedor</small></span></button>
-        <button class="screen-btn" data-go="vagas" aria-pressed="false"><span class="n">02</span><span><b>Vagas perto de mim</b><small>O lado do profissional</small></span></button>
+        <button class="screen-btn" data-go="vagas" aria-pressed="false"><span class="n">02</span><span><b>Painel do profissional</b><small>Disponível hoje, convites e vagas</small></span></button>
         <button class="screen-btn" data-go="urgente" aria-pressed="false"><span class="n">03</span><span><b>Preciso de alguém hoje</b><small>Match em minutos para o restaurante</small></span></button>
-        <button class="screen-btn" data-go="cotacao" aria-pressed="false"><span class="n">04</span><span><b>Cotação inteligente</b><small>Comparar propostas de fornecedores</small></span></button>
-        <button class="screen-btn" data-go="perfil" aria-pressed="false"><span class="n">05</span><span><b>Perfil e reputação</b><small>Chef's Match Qualidade</small></span></button>
-        <button class="screen-btn" data-go="academy" aria-pressed="false"><span class="n">06</span><span><b>Academy</b><small>Curso que vira competência</small></span></button>
-        <button class="screen-btn" data-go="avaliar" aria-pressed="false"><span class="n">07</span><span><b>Avaliar</b><small>Avalie. Conecte. Confie.</small></span></button>
+        <button class="screen-btn" data-go="contratar" aria-pressed="false"><span class="n">04</span><span><b>Contratar e avaliar</b><small>Combinado, contato e estrelas</small></span></button>
+        <button class="screen-btn" data-go="cotacao" aria-pressed="false"><span class="n">05</span><span><b>Compras com cotação</b><small>Comparar e aprovar pedido</small></span></button>
+        <button class="screen-btn" data-go="perfil" aria-pressed="false"><span class="n">06</span><span><b>Perfil e reputação</b><small>Chef's Match Qualidade</small></span></button>
+        <button class="screen-btn" data-go="academy" aria-pressed="false"><span class="n">07</span><span><b>Academy</b><small>Versão 2 · em breve</small></span></button>
       </div>
 
       <div class="phone" aria-label="Simulação do aplicativo Chef's Match">
@@ -720,7 +728,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <p class="eyebrow">Talentos · Fornecedores · Capacitação · Negócios</p>
     <h2>Uma plataforma. Quatro pilares.<br><em>Um mercado inteiro conectado.</em></h2>
     <p class="lead">O Chef's Match não é só um aplicativo de vagas ou um catálogo de fornecedores. É uma plataforma de desenvolvimento, conexão e negócios para a gastronomia brasileira, começando por Brasília.</p>
-    <div class="hero-ctas" style="margin-top:0"><a class="btn btn-o" href="#app">Ver o protótipo de novo</a><a class="btn btn-g" href="#inicio">Voltar ao topo</a></div>
+    <div class="hero-ctas" style="margin-top:0"><a class="btn btn-o" href="https://chef-match-app.vercel.app" target="_blank" rel="noopener">Abrir o app ↗</a><a class="btn btn-g" href="#inicio">Voltar ao topo</a></div>
   </div>
 </section>
 </main>
@@ -734,172 +742,202 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 <script>
 (function(){
+  /* Protótipo que espelha o app real (mesmos textos, fluxos e dados de demonstração). */
   var body=document.getElementById('phBody');
   var toastEl=document.getElementById('toast');
   var explain=document.getElementById('explain');
   var toastTimer;
-  function toast(html){toastEl.innerHTML=html;toastEl.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.hidden=true},2600)}
-  var colors=['#C2531A','#23945F','#3B5BA9','#8A4FB0','#B0802A'];
+  function toast(html){toastEl.innerHTML=html;toastEl.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.hidden=true},2800)}
+  var cores=['#C2531A','#23945F','#3B5BA9','#8A4FB0','#B0802A'];
+  function av(nome,i){var ini=nome.split(' ').map(function(s){return s[0]}).slice(0,2).join('');return '<span class="av" style="background:'+cores[i%cores.length]+'">'+ini+'</span>'}
 
-  var vagas=[
-    {f:'Garçom',l:'Restaurante Cerrado Vivo',km:'1,8',s:'R$ 2.100',t:'efe',r:'4,7 (31)'},
-    {f:'Auxiliar de cozinha',l:'Bistrô Asa Norte',km:'3,2',s:'R$ 1.850',t:'efe',r:'4,5 (12)'},
-    {f:'Cozinheiro(a)',l:'Hotel Esplanada',km:'4,7',s:'R$ 2.700',t:'tmp',r:'4,8 (44)'},
-    {f:'Bartender',l:'Bar do Lago',km:'5,1',s:'R$ 190/turno',t:'ext',r:'4,2 (9)'}
+  var estado={disponivel:true,convite:'pendente',candidatou:{},contratada:false,avaliada:false,estrelas:0,ordem:'preco',aprovada:null,buscou:false,convidados:{}};
+
+  var vagasPro=[
+    {id:'v1',f:'Garçom',e:'Bistrô Cerrado',r:'Asa Sul',s:'R$ 180 a diária',h:'18h às 00h',t:'ext',hoje:true,m:99,rep:'5,0 (1)'},
+    {id:'v2',f:'Garçom',e:'Sabor do Lago',r:'Lago Sul',s:'R$ 200 a diária',h:'19h às 01h',t:'ext',hoje:false,m:88,rep:'4,7 (3)'},
+    {id:'v3',f:'Garçom',e:'Padaria Pão do Planalto',r:'Águas Claras',s:'R$ 1.900/mês',h:'6h às 14h, 6x1',t:'efe',hoje:false,m:72,rep:'Sem avaliações'}
   ];
   var tlabel={efe:'Efetivo',tmp:'Temporário',ext:'Extra'};
-  var cands={
-    'Garçom':[{n:'Lucas M.',km:1.2,p:96,x:'5 anos',w:['Disponível hoje','Salão cheio','4,9 ★ (23)']},{n:'Ana P.',km:2.8,p:92,x:'3 anos',w:['Disponível hoje','Vinhos','4,7 ★ (11)']},{n:'Davi R.',km:3.5,p:88,x:'2 anos',w:['Disponível hoje','Eventos','4,6 ★ (8)']}],
-    'Cozinheiro(a)':[{n:'Joana S.',km:2.1,p:95,x:'4 anos',w:['Disponível hoje','Comida brasileira','4,8 ★ (12)']},{n:'Carlos T.',km:4.0,p:90,x:'6 anos',w:['Disponível hoje','Grelhados','4,8 ★ (19)']},{n:'Bia F.',km:5.6,p:86,x:'2 anos',w:['Disponível hoje','Massas','4,5 ★ (6)']}],
-    'Bartender':[{n:'Rafa L.',km:1.9,p:94,x:'4 anos',w:['Disponível hoje','Coquetelaria','4,9 ★ (15)']},{n:'Nina C.',km:3.3,p:89,x:'3 anos',w:['Disponível hoje','Drinks autorais','4,6 ★ (9)']}],
-    'Auxiliar de cozinha':[{n:'Pedro A.',km:0.9,p:93,x:'1 ano',w:['Disponível hoje','Boas práticas ✔','4,7 ★ (5)']},{n:'Lívia M.',km:2.4,p:90,x:'2 anos',w:['Disponível hoje','Mise en place','4,6 ★ (7)']}]
+
+  var disponiveis={
+    'Garçom':[
+      {n:'Lucas Mendes',r:'Asa Sul',p:99,w:['Mesma função','Mora em Asa Sul','Disponível hoje','5 anos de experiência','★ 4,5 (2)']},
+      {n:'Ana Paula Ribeiro',r:'Asa Norte',p:77,w:['Mesma função','Disponível hoje','3 anos de experiência']},
+      {n:'Davi Rocha',r:'Sudoeste',p:75,w:['Mesma função','Disponível hoje','2 anos de experiência']}],
+    'Cozinheiro(a)':[
+      {n:'Joana Silva',r:'Asa Sul',p:99,w:['Mesma função','Mora em Asa Sul','Disponível hoje','4 anos de experiência','★ 5,0 (1)']}],
+    'Bartender':[
+      {n:'Rafael Lima',r:'Asa Norte',p:79,w:['Mesma função','Disponível hoje','4 anos de experiência']}],
+    'Auxiliar de cozinha':[
+      {n:'Pedro Alves',r:'Guará',p:73,w:['Mesma função','Disponível hoje','1 ano de experiência']}]
   };
+
   var propostas=[
-    {n:'Hortifruti Planalto',preco:412,prazo:1,min:'R$ 300',frete:'Grátis',pg:'Pix / boleto 14d',nota:4.8},
-    {n:'Ceasa Direto DF',preco:368,prazo:2,min:'R$ 500',frete:'R$ 25',pg:'Pix',nota:4.5},
-    {n:'Verde Cerrado Distribuidora',preco:395,prazo:1,min:'R$ 200',frete:'R$ 15',pg:'Boleto 28d',nota:4.9}
+    {n:'Hortifruti Planalto',preco:412,prazo:1,frete:'Grátis acima de R$ 300',pg:'Pix ou boleto 14 dias',nota:5.0,av:1},
+    {n:'Ceasa Direto DF',preco:368,prazo:2,frete:'R$ 25',pg:'Pix',nota:0,av:0},
+    {n:'Verde Cerrado Distribuidora',preco:395,prazo:1,frete:'R$ 15',pg:'Boleto 28 dias',nota:0,av:0}
   ];
-  var sortBy='preco';
+  function reais(v){return 'R$ '+v.toFixed(2).replace('.',',')}
 
   var screens={
     home:{
       title:'Início',
-      text:'Uma única porta de entrada. Cada pessoa escolhe o seu perfil e vê só o que importa para ela.',
-      list:['Profissional: vagas, cursos e reputação','Empresa: contratar, comprar e acompanhar','Fornecedor: catálogo e cotações recebidas'],
+      text:'Quem abre o app escolhe como vai usar: profissional, estabelecimento ou fornecedor. Cada perfil vê um painel diferente.',
+      list:['Cadastro em menos de um minuto','Profissional entra sempre grátis','Funciona no celular e instala na tela inicial'],
       render:function(){
-        return '<p class="ph-h">O que você procura hoje?</p>'+
-        '<button class="choice" data-go="vagas"><span class="ic">✦</span><span><b>Quero trabalhar</b><small>12 vagas compatíveis com você</small></span></button>'+
-        '<button class="choice" data-go="urgente"><span class="ic">⚡</span><span><b>Preciso contratar</b><small>Fixo, temporário ou para hoje</small></span></button>'+
-        '<button class="choice" data-go="cotacao"><span class="ic">⇄</span><span><b>Comprar insumos</b><small>Compare propostas de fornecedores</small></span></button>'+
-        '<button class="choice" data-go="academy"><span class="ic">◆</span><span><b>Aprender e evoluir</b><small>Cursos da Chef\'s Match Academy</small></span></button>'+
-        '<div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)"><div class="row"><b>Movimento hoje em Brasília</b></div><div class="row muted" style="color:var(--muted-d);font-size:.78rem"><span class="num">38 vagas novas</span><span class="num">14 extras para hoje</span><span class="num">9 cotações</span></div></div>';
+        return '<p class="ph-h">A gastronomia se conecta aqui.</p>'+
+        '<button class="choice" data-go="vagas"><span class="ic">✦</span><span><b>Quero trabalhar</b><small>Vagas, extras e cursos. Sempre grátis.</small></span></button>'+
+        '<button class="choice" data-go="urgente"><span class="ic">⚡</span><span><b>Preciso contratar</b><small>Restaurante, bar, hotel, padaria…</small></span></button>'+
+        '<button class="choice" data-go="cotacao"><span class="ic">⇄</span><span><b>Sou fornecedor</b><small>Catálogo e cotações de restaurantes.</small></span></button>'+
+        '<div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)"><b>Hoje em Brasília</b><div class="row" style="color:var(--muted-d);font-size:.78rem"><span>6 disponíveis hoje</span><span>8 vagas</span><span>3 cotações</span></div></div>';
       }
     },
     vagas:{
-      title:'Vagas perto de mim',
-      text:'Gastronomia é presencial, então distância importa. O profissional vê vagas ordenadas por proximidade, com salário e tipo de contratação claros desde o início.',
-      list:['Salário e escala sempre informados','Reputação do restaurante visível antes de se candidatar','Tipos: efetivo, temporário e extra'],
+      title:'Painel do profissional',
+      text:'O profissional liga o “Disponível hoje” para aparecer nas buscas urgentes. Recebe convites e vê só vagas da sua função, ordenadas por compatibilidade.',
+      list:['Um toque para ficar disponível no dia','Convites chegam direto no painel','Reputação do restaurante visível antes de aceitar'],
       render:function(){
-        return '<p class="ph-h">Olá, João 👋</p><p class="muted" style="font-size:.8rem">Cozinheiro · Asa Sul · disponível à noite</p>'+
-        vagas.map(function(v,i){return '<div class="card"><div class="row"><b>'+v.f+'</b><span class="pill p-'+v.t+'">'+tlabel[v.t]+'</span></div><div class="muted" style="font-size:.78rem">'+v.l+' · '+v.km+' km · ★ '+v.r+'</div><div class="row"><b class="num">'+v.s+'</b><button class="mini-btn o" data-apply="'+i+'">Candidatar</button></div></div>'}).join('');
+        var h='<p class="muted" style="font-size:.72rem;font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.1em">Garçom</p><p class="ph-h" style="margin-top:-6px">Olá, Lucas!</p>';
+        h+=estado.disponivel
+          ?'<div class="card" style="background:var(--orange);border-color:var(--orange);color:#140A03"><b>⚡ Disponível hoje</b><span style="font-size:.74rem">Restaurantes que precisam de alguém hoje podem te encontrar.</span><button class="mini-btn" data-disp="0" style="justify-self:start">Desligar</button></div>'
+          :'<div class="card" style="border-style:dashed"><b>Você está indisponível hoje</b><span class="muted" style="font-size:.74rem">Ligue para aparecer nas buscas urgentes.</span><button class="mini-btn o" data-disp="1" style="justify-self:start">Estou disponível hoje</button></div>';
+        if(estado.convite==='pendente'){
+          h+='<div class="card" style="border:2px solid var(--orange)"><b>Bistrô Cerrado te convidou: Garçom</b><span class="muted" style="font-size:.74rem">R$ 180 a diária · 18h às 00h · Asa Sul · para hoje</span><div class="row" style="justify-content:flex-start;gap:6px"><button class="mini-btn o" data-convite="aceita">Aceitar</button><button class="mini-btn" data-convite="recusada" style="background:transparent;color:var(--ink);border:1px solid var(--line)">Recusar</button></div></div>';
+        } else {
+          h+='<div class="card"><div class="row"><b>Garçom · Bistrô Cerrado</b><span class="pill '+(estado.convite==='aceita'?'p-efe':'p-ext')+'">'+(estado.convite==='aceita'?'Aceita':'Recusada')+'</span></div></div>';
+        }
+        h+='<p style="font-family:var(--f-display);font-weight:800;text-transform:uppercase;margin-top:4px">Vagas para você</p>';
+        vagasPro.filter(function(v){return v.id!=='v1'}).forEach(function(v){
+          var ja=estado.candidatou[v.id];
+          h+='<div class="card"><div class="row"><b>'+v.f+'</b><span class="pct-badge">'+v.m+'%</span></div><div class="muted" style="font-size:.74rem">'+v.e+' · ★ '+v.rep+'</div><div class="muted" style="font-size:.74rem">'+v.s+' · '+v.r+' · '+v.h+'</div><div class="row"><span class="pill p-'+v.t+'">'+tlabel[v.t]+'</span><button class="mini-btn o" data-apply="'+v.id+'"'+(ja?' disabled':'')+'>'+(ja?'Enviada':'Quero essa vaga')+'</button></div></div>';
+        });
+        return h;
       }
     },
     urgente:{
       title:'Preciso de alguém hoje',
-      text:'O botão que resolve a dor do sábado à noite. O restaurante informa função, turno e valor; o app mostra quem marcou "disponível hoje", com compatibilidade explicada.',
-      list:['Match por função, distância, experiência e reputação','O sistema explica o porquê de cada %','A escolha final é sempre do gerente'],
+      text:'O restaurante informa função, diária e turno. Na hora, o app mostra quem marcou “disponível hoje”, com a compatibilidade e o motivo de cada %.',
+      list:['Só aparece quem é da mesma função','Os motivos ficam visíveis: a IA recomenda, o gerente decide','Convite chega no painel do profissional'],
       render:function(){
-        return '<button class="big-urgent" id="u-go" type="button">⚡ Preciso de alguém hoje</button>'+
+        var h='<p class="ph-h">⚡ Preciso de alguém hoje</p>'+
         '<div class="card"><div class="field"><label for="u-func">Função</label><select id="u-func"><option>Garçom</option><option>Cozinheiro(a)</option><option>Bartender</option><option>Auxiliar de cozinha</option></select></div>'+
-        '<div class="row" style="gap:8px"><div class="field" style="flex:1"><label for="u-hora">Turno</label><select id="u-hora"><option>18h – 00h</option><option>11h – 16h</option><option>16h – 00h</option></select></div><div class="field" style="flex:1"><label for="u-val">Diária</label><input id="u-val" value="R$ 180"></div></div></div>'+
+        '<div class="row" style="gap:8px"><div class="field" style="flex:1"><label for="u-val">Diária</label><input id="u-val" value="R$ 180"></div><div class="field" style="flex:1"><label for="u-hora">Turno de hoje</label><input id="u-hora" value="18h às 00h"></div></div></div>'+
+        '<button class="big-urgent" id="u-go" type="button">⚡ Buscar profissionais agora</button>'+
         '<div id="u-res" style="display:grid;gap:10px"></div>';
+        return h;
       },
-      after:function(){
-        document.getElementById('u-go').addEventListener('click',runMatch);
+      after:function(){document.getElementById('u-go').addEventListener('click',runMatch)}
+    },
+    contratar:{
+      title:'Contratar e avaliar',
+      text:'Na vaga, o restaurante vê quem se candidatou e quem foi convidado. Ao contratar, o WhatsApp aparece e os dois podem se avaliar. Só avalia quem teve uma experiência confirmada.',
+      list:['Contato liberado só depois do “combinado”','Avaliação nos dois sentidos','A nota atualiza o perfil e a compatibilidade na hora'],
+      render:function(){
+        var h='<div class="row" style="justify-content:flex-start;gap:6px"><span class="pill p-ext">⚡ Para hoje</span><span class="pill p-ext">Extra</span></div><p class="ph-h">Garçom</p><p class="muted" style="font-size:.74rem;margin-top:-6px">Bistrô Cerrado · R$ 180 a diária · 18h às 00h</p>';
+        h+='<div class="card"><div class="row" style="justify-content:flex-start;gap:10px">'+av('Ana Paula Ribeiro',0)+'<div style="flex:1"><b>Ana Paula Ribeiro</b><div class="muted" style="font-size:.72rem">Garçom · se candidatou</div></div><span class="pct-badge">'+(estado.avaliada?'82':'77')+'%</span></div>';
+        if(!estado.contratada){
+          h+='<div class="row" style="justify-content:flex-start;gap:6px"><button class="mini-btn o" data-contratar="1">Contratar</button><button class="mini-btn" style="background:transparent;color:var(--ink);border:1px solid var(--line)">Recusar</button></div>';
+        } else {
+          h+='<div class="row"><span class="muted" style="font-size:.74rem">'+(estado.avaliada?'★ 5,0 (1 avaliação)':'Sem avaliações ainda')+'</span><span class="pill p-efe">Combinado</span></div><div style="font-size:.76rem">Contato: <b style="font-family:var(--f-mono)">(61) 98100-2222</b></div>';
+          if(!estado.avaliada){
+            var st='';for(var i=1;i<=5;i++){st+='<button data-star="'+i+'" aria-label="'+i+' estrela'+(i>1?'s':'')+'" style="background:none;border:0;font-size:1.6rem;cursor:pointer;padding:0 2px;color:'+(i<=estado.estrelas?'var(--orange)':'var(--line)')+'">★</button>'}
+            h+='<div style="display:grid;gap:8px;border:1px solid rgba(240,120,50,.4);background:rgba(240,120,50,.06);border-radius:10px;padding:10px"><b style="font-size:.8rem">Avaliar <span style="color:var(--orange-deep)">Ana Paula Ribeiro</span></b><div>'+st+'</div><div class="field"><input id="rate-txt" placeholder="Conte como foi a experiência (opcional)"></div><button class="mini-btn o" data-send="1"'+(estado.estrelas?'':' disabled')+' style="justify-self:start">Enviar avaliação</button></div>';
+          }
+        }
+        h+='</div>';
+        h+='<div class="card"><div class="row" style="justify-content:flex-start;gap:10px">'+av('Davi Rocha',2)+'<div style="flex:1"><b>Davi Rocha</b><div class="muted" style="font-size:.72rem">Garçom · se candidatou</div></div><span class="pct-badge">75%</span></div><div class="row" style="justify-content:flex-start;gap:6px"><span class="pill p-tmp">Pendente</span></div></div>';
+        return h;
       }
     },
     cotacao:{
-      title:'Cotação inteligente',
-      text:'O restaurante monta a lista uma vez e recebe propostas de vários fornecedores. Compara preço, prazo, pedido mínimo, frete e forma de pagamento lado a lado.',
-      list:['Menos tempo procurando insumos','Fornecedores com histórico verificado','Comissão de 2% a 5% quando a compra é feita no app'],
+      title:'Compras com cotação',
+      text:'O restaurante lista os insumos uma vez. Os fornecedores mandam propostas e ele compara por preço, prazo ou avaliação antes de aprovar.',
+      list:['Fornecedor responde pelo próprio painel','Pedido aprovado vai para o topo com o contato','Comissão de 2% a 5% via provedor de pagamento com split'],
       render:function(){
-        var list=propostas.slice().sort(function(a,b){return sortBy==='preco'?a.preco-b.preco:sortBy==='prazo'?(a.prazo-b.prazo)||(a.preco-b.preco):b.nota-a.nota});
-        return '<p class="ph-h">Lista da semana</p><div class="card" style="font-size:.78rem"><div class="row"><span>Tomate italiano</span><b class="num">20 kg</b></div><div class="row"><span>Batata lavada</span><b class="num">30 kg</b></div><div class="row"><span>Cebola</span><b class="num">15 kg</b></div><div class="row"><span>Folhas (alface, rúcula)</span><b class="num">8 cx</b></div></div>'+
-        '<div class="row"><b>3 propostas</b><span class="muted" style="font-size:.72rem">Ordenar por</span></div>'+
-        '<div class="seg" role="group" aria-label="Ordenar propostas"><button data-sort="preco" aria-pressed="'+(sortBy==='preco')+'">Preço</button><button data-sort="prazo" aria-pressed="'+(sortBy==='prazo')+'">Prazo</button><button data-sort="nota" aria-pressed="'+(sortBy==='nota')+'">Avaliação</button></div>'+
-        list.map(function(p,i){return '<div class="card'+(i===0?' best':'')+'"><div class="row"><b>'+p.n+'</b>'+(i===0?'<span class="best-tag">Melhor opção</span>':'')+'</div><div class="row"><b class="num" style="font-size:1.05rem">R$ '+p.preco+',00</b><span class="muted num" style="font-size:.75rem">'+p.nota.toFixed(1).replace('.',',')+' ★ · entrega '+p.prazo+'d</span></div><div class="muted" style="font-size:.72rem">Mín. '+p.min+' · Frete '+p.frete+' · '+p.pg+'</div><button class="mini-btn'+(i===0?' o':'')+'" data-buy="'+p.n+'" style="justify-self:start">Aprovar pedido</button></div>'}).join('');
+        var lista=propostas.slice().sort(function(a,b){
+          if(estado.aprovada){if(a.n===estado.aprovada)return -1;if(b.n===estado.aprovada)return 1}
+          return estado.ordem==='preco'?a.preco-b.preco:estado.ordem==='prazo'?(a.prazo-b.prazo)||(a.preco-b.preco):b.nota-a.nota});
+        var h='<p class="ph-h">Hortifruti da semana</p><div class="card" style="font-family:var(--f-mono);font-size:.74rem;background:var(--ink);color:#F6F2EE;border-color:var(--ink)">Tomate italiano: 20 kg<br>Batata lavada: 30 kg<br>Cebola: 15 kg<br>Alface americana: 8 caixas</div>'+
+        '<div class="seg" role="group" aria-label="Ordenar propostas"><button data-sort="preco" aria-pressed="'+(estado.ordem==='preco')+'">Menor preço</button><button data-sort="prazo" aria-pressed="'+(estado.ordem==='prazo')+'">Mais rápido</button><button data-sort="nota" aria-pressed="'+(estado.ordem==='nota')+'">Melhor avaliado</button></div>';
+        lista.forEach(function(p,i){
+          var aprov=estado.aprovada===p.n, dest=!estado.aprovada&&i===0;
+          h+='<div class="card'+(aprov||dest?' best':'')+'"><div class="row"><b>'+p.n+'</b>'+(aprov?'<span class="pill p-efe">Aprovada</span>':dest?'<span class="best-tag">Melhor opção</span>':'')+'</div>'+
+          '<div class="muted" style="font-size:.72rem">'+(p.av?'★ '+p.nota.toFixed(1).replace('.',',')+' ('+p.av+')':'Sem avaliações ainda')+'</div>'+
+          '<div class="row"><b class="num" style="font-size:1.05rem">'+reais(p.preco)+'</b><span class="muted" style="font-size:.72rem">entrega em '+p.prazo+' dia'+(p.prazo>1?'s':'')+'</span></div>'+
+          '<div class="muted" style="font-size:.7rem">Frete: '+p.frete+' · '+p.pg+'</div>'+
+          (estado.aprovada?'':'<button class="mini-btn'+(dest?' o':'')+'" data-buy="'+p.n+'" style="justify-self:start">Aprovar pedido</button>')+'</div>';
+        });
+        return h;
       }
     },
     perfil:{
       title:'Perfil e reputação',
-      text:'O Chef\'s Match Qualidade mostra a nota junto com a quantidade de avaliações verificadas e os critérios. Uma avaliação isolada nunca pesa igual a dezenas.',
-      list:['Só avalia quem teve experiência real','Competências comprovadas, autodeclaradas e avaliadas aparecem separadas','Direito de resposta e contestação'],
+      text:'Todo perfil mostra a nota com a quantidade de avaliações e a distribuição das estrelas. Um perfil com uma avaliação nunca parece igual a outro com dezenas.',
+      list:['Níveis: em construção, verificadas, consistente, destaque','Comentários com quem avaliou e em que contexto','Só experiências confirmadas no app contam'],
       render:function(){
-        var crit=[['Conhecimento técnico',5],['Organização',5],['Trabalho em equipe',4],['Comunicação',5],['Pontualidade',4.8]];
-        return '<div class="card"><div class="row" style="justify-content:flex-start;gap:12px"><span class="av" style="background:#C2531A;width:48px;height:48px;font-size:1rem">JS</span><div><b>João Silva</b><div class="muted" style="font-size:.78rem">Cozinheiro · 4 anos de experiência</div></div></div>'+
-        '<div class="row" style="flex-wrap:wrap;justify-content:flex-start;gap:6px"><span class="pill p-efe">Disponível hoje</span><span class="pill p-tmp">Turno noturno</span></div></div>'+
-        '<div class="card"><div class="score-big"><strong class="num">4,8</strong><div><b>Histórico consistente</b><div class="muted" style="font-size:.75rem">12 avaliações verificadas · últimos 6 meses</div></div></div>'+
-        crit.map(function(c){return '<div style="display:grid;gap:3px"><div class="row" style="font-size:.76rem"><span>'+c[0]+'</span><b class="num">'+String(c[1].toFixed(1)).replace('.',',')+'/5</b></div><div class="bar"><i style="width:'+(c[1]/5*100)+'%"></i></div></div>'}).join('')+'</div>'+
-        '<div class="card"><b>Especialidades</b><div class="muted" style="font-size:.78rem">Massas · Carnes · Comida brasileira · Churrasco</div><b style="margin-top:4px">Cursos</b><div class="muted" style="font-size:.78rem">✔ Boas práticas · ✔ Manipulação de alimentos · ✔ Culinária profissional</div></div>'+
-        '<p class="muted" style="font-size:.66rem;text-align:center">Perfil demonstrativo. Não representa um usuário real.</p>';
+        var dist=[[5,1],[4,1],[3,0],[2,0],[1,0]];
+        return '<div class="card" style="justify-items:start">'+av('Lucas Mendes',1).replace('class="av"','class="av" style="width:52px;height:52px"')+'<b style="font-size:1.05rem">Lucas Mendes</b><span class="muted" style="font-size:.74rem;margin-top:-4px">Garçom · Asa Sul</span><div class="row" style="justify-content:flex-start;gap:6px;flex-wrap:wrap"><span class="pill p-efe">Avaliações verificadas</span><span class="pill p-ext">⚡ Disponível hoje</span><span class="pill" style="background:var(--paper-2);color:var(--muted)">5 anos de experiência</span></div><span style="font-size:.74rem">Garçom há 5 anos em restaurantes da Asa Sul. Acostumado com casa cheia.</span></div>'+
+        '<div class="card"><div class="score-big"><strong class="num" style="color:var(--orange-deep)">4,5</strong><div style="display:grid;gap:3px;flex:1">'+dist.map(function(d){return '<div class="row" style="font-size:.66rem;gap:6px"><span>'+d[0]+'</span><div class="bar" style="flex:1"><i style="width:'+(d[1]*50)+'%"></i></div><span>'+d[1]+'</span></div>'}).join('')+'</div></div><span class="muted" style="font-size:.7rem">2 avaliações verificadas</span></div>'+
+        '<div class="card"><span style="color:var(--orange-deep)">★★★★★</span><span style="font-size:.76rem">Chegou cedo, segurou o salão sozinho na pior hora. Chamaremos de novo.</span><span class="muted" style="font-size:.66rem">Bistrô Cerrado · Estabelecimento · contratação</span></div>'+
+        '<div class="card"><span style="color:var(--orange-deep)">★★★★<span style="color:var(--line)">★</span></span><span style="font-size:.76rem">Bom atendimento no evento, atento aos detalhes.</span><span class="muted" style="font-size:.66rem">Sabor do Lago · Estabelecimento · contratação</span></div>';
       }
     },
     academy:{
-      title:'Academy',
-      text:'Cada curso concluído vira competência no perfil, e o app passa a mostrar vagas que antes não eram compatíveis. Curso → competência → perfil → oportunidade.',
-      list:['Trilhas de cozinha, salão, boas práticas e gestão','Certificado de conclusão (curso livre)','Fonte de receita da plataforma'],
+      title:'Academy · versão 2',
+      text:'Os cursos entram na segunda versão do app. Cada curso concluído vira competência no perfil e libera vagas que antes não eram compatíveis.',
+      list:['Trilhas de cozinha, salão, boas práticas e gestão','Certificado de curso livre','Fonte de receita: de R$ 39 a R$ 199'],
       render:function(){
-        var cs=[['Boas práticas e segurança alimentar','Introdutório','R$ 39',100],['Mise en place e organização de praça','Profissional','R$ 89',60],['Atendimento e hospitalidade','Profissional','R$ 89',0],['Fichas técnicas e controle de custos','Especializado','R$ 149',0]];
-        return '<p class="ph-h">Suas trilhas</p><div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)"><b style="color:var(--orange)">Próximo passo: virar cozinheiro líder</b><div style="font-size:.76rem;color:var(--muted-d)">Conclua "Mise en place" e desbloqueie 5 vagas de nível acima.</div></div>'+
-        cs.map(function(c,i){return '<div class="card"><div class="row"><b style="font-size:.84rem">'+c[0]+'</b></div><div class="row"><span class="muted" style="font-size:.74rem">'+c[1]+' · '+c[2]+'</span>'+(c[3]===100?'<span class="pill p-efe">Concluído</span>':c[3]>0?'<span class="pill p-tmp">'+c[3]+'%</span>':'<button class="mini-btn" data-course="'+i+'">Começar</button>')+'</div>'+(c[3]>0&&c[3]<100?'<div class="bar"><i style="width:'+c[3]+'%"></i></div>':'')+'</div>'}).join('');
+        var cs=[['Boas práticas e segurança alimentar','Introdutório · R$ 39'],['Mise en place e organização de praça','Profissional · R$ 89'],['Atendimento e hospitalidade','Profissional · R$ 89'],['Fichas técnicas e controle de custos','Especializado · R$ 149']];
+        return '<div class="row"><p class="ph-h">Academy</p><span class="pill p-tmp">Em breve</span></div><div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)"><b style="color:var(--orange)">Na versão 2 do app</b><span style="font-size:.74rem;color:var(--muted-d)">Curso concluído → competência no perfil → novas vagas compatíveis.</span></div>'+
+        cs.map(function(c){return '<div class="card"><b style="font-size:.82rem">'+c[0]+'</b><span class="muted" style="font-size:.72rem">'+c[1]+'</span></div>'}).join('');
       }
-    }
-  };
-
-  var rateTarget='empresas',stars=0;
-  var rateCrit={talentos:['Pontualidade','Conhecimento técnico','Trabalho em equipe'],empresas:['Ambiente de trabalho','Clareza sobre salário e jornada','Respeito profissional'],fornecedores:['Qualidade dos produtos','Entrega no prazo','Conformidade do pedido']};
-  var rateWho={talentos:'Lucas M. · turno extra de 08/11',empresas:'Restaurante Cerrado Vivo · processo seletivo',fornecedores:'Hortifruti Planalto · pedido nº 2291'};
-  screens.avaliar={
-    title:'Avalie. Conecte. Confie.',
-    text:'A avaliação acontece nos dois sentidos e só depois de uma experiência real: processo seletivo, contratação ou compra registrada no app.',
-    list:['Convite de avaliação vinculado à transação','Moderação contra avaliações ofensivas ou discriminatórias','O avaliado pode responder e contestar'],
-    render:function(){
-      var seg=[['talentos','Talentos'],['empresas','Empresas'],['fornecedores','Fornecedores']].map(function(s){return '<button data-rt="'+s[0]+'" aria-pressed="'+(rateTarget===s[0])+'">'+s[1]+'</button>'}).join('');
-      var st='';for(var i=1;i<=5;i++){st+='<button data-star="'+i+'" aria-label="'+i+' estrela'+(i>1?'s':'')+'" style="background:none;border:0;font-size:1.7rem;cursor:pointer;color:'+(i<=stars?'var(--orange)':'var(--line)')+'">★</button>'}
-      return '<div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)"><b style="color:var(--orange)">Chef\'s Match Qualidade</b><span style="font-size:.76rem;color:var(--muted-d)">Conheça a reputação de quem faz a gastronomia acontecer.</span></div>'+
-      '<div class="seg" role="group" aria-label="Quem avaliar">'+seg+'</div>'+
-      '<div class="card"><span class="pill p-efe" style="justify-self:start">Experiência verificada</span><b>'+rateWho[rateTarget]+'</b>'+
-      '<div class="row" style="justify-content:center">'+st+'</div>'+
-      rateCrit[rateTarget].map(function(c){return '<div class="row" style="font-size:.78rem"><span>'+c+'</span><span class="muted">avaliar</span></div>'}).join('')+
-      '<div class="field"><label for="rate-txt">Comentário</label><input id="rate-txt" placeholder="Conte como foi sua experiência…"></div>'+
-      '<button class="mini-btn o" data-send="1"'+(stars?'':' disabled')+' style="justify-self:start">Enviar avaliação</button></div>'+
-      '<p class="muted" style="font-size:.66rem;text-align:center">Demonstração de interface. Nenhuma avaliação é publicada.</p>';
     }
   };
 
   function runMatch(){
     var f=document.getElementById('u-func').value;
-    var h=document.getElementById('u-hora').value;
     var res=document.getElementById('u-res');
-    res.innerHTML='<div class="card muted" style="text-align:center">Buscando profissionais disponíveis…</div>';
+    res.innerHTML='<div class="card muted" style="text-align:center">Buscando quem está disponível hoje…</div>';
     setTimeout(function(){
-      var list=cands[f]||[];
-      res.innerHTML='<div class="row"><b>'+list.length+' disponíveis · '+h+'</b><span class="muted" style="font-size:.72rem">em 4 min</span></div>'+
-      list.map(function(c,i){return '<div class="card"><div class="row" style="justify-content:flex-start;gap:10px"><span class="av" style="background:'+colors[i%colors.length]+'">'+c.n.split(' ').map(function(s){return s[0]}).join('')+'</span><div style="flex:1"><div class="row"><b>'+c.n+'</b><span class="pct-badge">'+c.p+'%</span></div><div class="muted" style="font-size:.74rem">'+f+' · '+c.x+' · '+String(c.km).replace('.',',')+' km</div></div></div><div class="why">'+c.w.map(function(w){return '<span>'+w+'</span>'}).join('')+'</div><button class="mini-btn o" data-invite="'+c.n+'" style="justify-self:start">Convidar para o turno</button></div>'}).join('');
-    },650);
+      var list=disponiveis[f]||[];
+      res.innerHTML='<p style="font-family:var(--f-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);font-weight:600">Disponíveis hoje · '+list.length+'</p>'+
+      list.map(function(c,i){var conv=estado.convidados[c.n];return '<div class="card"><div class="row" style="justify-content:flex-start;gap:10px">'+av(c.n,i)+'<div style="flex:1"><b>'+c.n+'</b><div class="muted" style="font-size:.72rem">'+f+' · '+c.r+'</div></div><span class="pct-badge">'+c.p+'%</span></div><div class="why">'+c.w.map(function(w){return '<span>'+w+'</span>'}).join('')+'</div><button class="mini-btn o" data-invite="'+c.n+'" style="justify-self:start"'+(conv?' disabled':'')+'>'+(conv?'Convite enviado':'Convidar para hoje')+'</button></div>'}).join('');
+    },600);
   }
 
-  var current='home';
+  var atual='home';
   function go(id){
     if(!screens[id])return;
-    current=id;
+    atual=id;
     var s=screens[id];
     body.innerHTML=s.render();
-    body.scrollTop=0;
     if(s.after)s.after();
-    explain.innerHTML='<p class="eyebrow">Tela em destaque</p><h3>'+s.title+'</h3><p>'+s.text+'</p><ul>'+s.list.map(function(l){return '<li>'+l+'</li>'}).join('')+'</ul>';
+    explain.innerHTML='<p class="eyebrow">Tela em destaque</p><h3>'+s.title+'</h3><p>'+s.text+'</p><ul>'+s.list.map(function(l){return '<li>'+l+'</li>'}).join('')+'</ul><a class="btn btn-o btn-sm" href="https://chef-match-app.vercel.app" target="_blank" rel="noopener" style="justify-self:start;margin-top:6px">Fazer isso no app de verdade ↗</a>';
     document.querySelectorAll('.screen-btn').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.go===id?'true':'false')});
-    var tabMap={home:'home',vagas:'vagas',urgente:'urgente',cotacao:'cotacao',perfil:'perfil',academy:'home',avaliar:'perfil'};
+    var tabMap={home:'home',vagas:'vagas',urgente:'urgente',contratar:'urgente',cotacao:'cotacao',perfil:'perfil',academy:'perfil'};
     document.querySelectorAll('.ph-tabs button').forEach(function(b){b.setAttribute('aria-current',b.dataset.go===tabMap[id]?'true':'false')});
-    toastEl.hidden=true;
   }
+  function render(){var y=body.scrollTop;go(atual);body.scrollTop=y}
 
   document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-go],[data-apply],[data-invite],[data-sort],[data-buy],[data-course],[data-rt],[data-star],[data-send]');
+    var t=e.target.closest('[data-go],[data-apply],[data-invite],[data-sort],[data-buy],[data-disp],[data-convite],[data-contratar],[data-star],[data-send]');
     if(!t)return;
-    if(t.dataset.rt){rateTarget=t.dataset.rt;stars=0;go('avaliar');return}
-    if(t.dataset.star){stars=+t.dataset.star;go('avaliar');return}
-    if(t.dataset.send){t.disabled=true;t.textContent='Enviada';toast('Avaliação de <b>'+stars+' ★</b> enviada para moderação.');return}
-    if(t.dataset.go){go(t.dataset.go);return}
-    if(t.dataset.apply){t.disabled=true;t.textContent='Enviada';toast('Candidatura enviada para <b>'+vagas[+t.dataset.apply].l+'</b>. Você acompanha o status no app.');return}
-    if(t.dataset.invite){t.disabled=true;t.textContent='Convite enviado';toast('<b>'+t.dataset.invite+'</b> recebeu o convite. Resposta média: 6 min.');return}
-    if(t.dataset.sort){sortBy=t.dataset.sort;go('cotacao');return}
-    if(t.dataset.buy){t.disabled=true;t.textContent='Pedido aprovado';toast('Pedido aprovado com <b>'+t.dataset.buy+'</b>. Pagamento via provedor com split.');return}
-    if(t.dataset.course){t.disabled=true;t.textContent='Matriculado';toast('Matrícula feita. Ao concluir, a competência entra no seu perfil.');return}
+    var d=t.dataset;
+    if(d.go){body.scrollTop=0;toastEl.hidden=true;go(d.go);return}
+    if(d.disp){estado.disponivel=d.disp==='1';render();toast(estado.disponivel?'Você está <b>disponível hoje</b>. Restaurantes já podem te convidar!':'Disponibilidade desligada.');return}
+    if(d.convite){estado.convite=d.convite;render();toast(d.convite==='aceita'?'<b>Combinado!</b> Agora é só se falarem.':'Resposta registrada.');return}
+    if(d.apply){estado.candidatou[d.apply]=true;render();toast('<b>Candidatura enviada!</b> Acompanhe o status no seu painel.');return}
+    if(d.invite){estado.convidados[d.invite]=true;t.disabled=true;t.textContent='Convite enviado';toast('<b>Convite enviado!</b> '+d.invite.split(' ')[0]+' vê no painel dele(a).');return}
+    if(d.contratar){estado.contratada=true;render();toast('<b>Combinado!</b> O WhatsApp da Ana foi liberado.');return}
+    if(d.star){estado.estrelas=+d.star;render();return}
+    if(d.send){estado.avaliada=true;render();toast('<b>Avaliação enviada.</b> Obrigado por fortalecer a confiança na gastronomia!');return}
+    if(d.sort){estado.ordem=d.sort;render();return}
+    if(d.buy){estado.aprovada=d.buy;render();toast('<b>Pedido aprovado!</b> Depois da entrega, avalie o fornecedor.');return}
   });
   go('home');
 
-  // Tabs
+  // Abas da análise estratégica
   var tabs=document.querySelectorAll('[role=tab]');
   tabs.forEach(function(tab){
     tab.addEventListener('click',function(){
@@ -909,7 +947,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     });
   });
 
-  // Simulator
+  // Simulador financeiro
   var FIX=2500,VAR=0.08,INV=3000,BE=FIX/(1-VAR);
   var ids=['emp','for','cur','rec','com'];
   var price={emp:149,for:99,cur:89,rec:500,com:1};

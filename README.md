@@ -16,6 +16,7 @@ Projeto acadêmico de uma startup de gastronomia, com lançamento em Brasília/D
 - Site: https://claude.ai/artifact/BGuCLn8Cgr4zAPGXzLp4ri
 - Protótipo do app (direto na seção): https://claude.ai/artifact/BGuCLn8Cgr4zAPGXzLp4ri#app
 - Slides: https://claude.ai/artifact/JqQ65sKEiLemDABeF1qFWi
+- **App de verdade:** https://chef-match-app.vercel.app (código: https://github.com/GustavoSerafim10/chef-match-app)
 
 Para o grupo conseguir abrir os links, use o botão **Share** de cada página. Os slides podem ser baixados em PowerPoint ou PDF pelo próprio Share.
 
