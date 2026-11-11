@@ -51,9 +51,9 @@ Feche com: "Contratação, compras e reputação, tudo em um app só."
 
 **Antes de apresentar** (no terminal do VS Code, dentro da pasta `chef-match-app`):
 ```bash
-node scripts/seed.mjs --disponibilidade   # profissionais "disponíveis hoje"
-node scripts/seed.mjs --cotacao           # nova cotação com 3 propostas para comparar
+node scripts/seed.mjs --preparar-demo
 ```
+Esse comando deixa tudo pronto: profissionais "disponíveis hoje", uma cotação nova com 3 propostas e um convite com vagas novas para o Lucas.
 Contas de demonstração, se precisar entrar manualmente (senha `chefmatch2026`): `bistro.cerrado@chefmatch.app`, `lucas.mendes@chefmatch.app` e `carnes.nobre@chefmatch.app`.
 
 ## [Integrante 3]: reputação, RH, público, modelo e finanças
