@@ -458,6 +458,7 @@ html.js .revela.visto{opacity:1;translate:0 0}
 
 /* Fechamento com foto e brasas */
 .closing{padding-block:clamp(90px,12vw,160px)}
+.closing .sec-foto::after{background:linear-gradient(90deg,rgba(26,22,18,.94) 0%,rgba(26,22,18,.78) 45%,rgba(26,22,18,.35) 100%),linear-gradient(180deg,#1A1612 0%,transparent 25%,transparent 75%,#1A1612 100%)}
 .closing h2 em{color:#FF7A2E;text-shadow:0 0 18px rgba(255,107,44,.7),0 0 46px rgba(255,107,44,.4)}
 
 /* Protótipo com halo */
@@ -592,7 +593,16 @@ main>section .sec-head>*,.follow span,.follow strong,.quote-big,.pain-list li,.c
 .stack span{background:#100E0D!important;color:#E9E1D9!important;border:1px solid rgba(255,107,44,.35)!important;border-radius:999px!important;padding:7px 14px!important;box-shadow:0 0 12px -4px rgba(255,107,44,.6),inset 0 1px 0 rgba(255,255,255,.05);transition:all .3s ease}
 .stack span:hover{border-color:#FF8A45!important;box-shadow:0 0 18px -2px rgba(255,107,44,.9)}
 
+/* Três caminhos: zoom com leve deslocamento e brilho atrás do card recomendado */
+@keyframes slowPanZoom{from{transform:scale(1) translate(0,0)}to{transform:scale(1.1) translate(-2%,-1.5%)}}
+@media (prefers-reduced-motion:no-preference) and (min-width:961px){.sec-foto.pan.on::before{animation:slowPanZoom 22s ease-in-out infinite alternate}}
+#investimento .sec-foto::after{background:radial-gradient(circle at 25% 45%,rgba(255,107,44,.18),transparent 60%),radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(26,22,18,.45) 100%),linear-gradient(180deg,#1A1612 0%,rgba(26,22,18,.3) 25%,rgba(26,22,18,.3) 75%,#1A1612 100%)}
+.inv article:not(.rec){background:rgba(20,18,16,.72)!important}
+.stack span{background:rgba(20,18,16,.72)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+
 /* ===== Jurídico: 3 colunas com ícones ===== */
+.legal p:not(.eyebrow){color:#DDD5CD}
+.legal p,.legal h3,.stack span{text-shadow:0 1px 2px rgba(0,0,0,.9),0 2px 12px rgba(0,0,0,.8)}
 .legal{gap:22px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,107,44,.15)}
 .legal article{grid-template-columns:auto 1fr;column-gap:16px;align-items:start;padding:20px;border-radius:var(--r);border:1px solid transparent;transition:all .3s ease}
 .legal article:hover{border-color:rgba(255,107,44,.3);background:rgba(24,22,20,.6)}
@@ -676,7 +686,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- PROBLEMA -->
 <section id="problema">
-  <div class="sec-foto" style="--op:.4;--foto:url(img/salao-bar.webp)" aria-hidden="true"></div>
+  <div class="sec-foto" style="--op:.5;--foto:url(img/salao-lotado.webp)" aria-hidden="true"></div>
   <div class="wrap problem-grid">
     <div style="display:grid;gap:24px">
       <p class="eyebrow">O problema</p>
@@ -703,7 +713,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- IDENTIDADE -->
 <section class="dark">
-  <div class="sec-foto" style="--op:.4;--foto:url(img/salao-bar.webp);--pos:center 70%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--foto:url(img/restaurante-escada.webp);--pos:center 40%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Identidade organizacional</p>
@@ -826,7 +836,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- JORNADA -->
 <section class="tint">
-  <div class="sec-foto" style="--foto:url(img/hero-cozinha.webp);--pos:center 20%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--foto:url(img/brigada.webp);--pos:center 40%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Chef's Match RH</p>
@@ -868,7 +878,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- MODELO DE NEGÓCIO -->
 <section id="negocio">
-  <div class="sec-foto" style="--foto:url(img/pratos.webp);--pos:center 30%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--foto:url(img/restaurante-noite.webp);--pos:center 50%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Modelo de negócio</p>
@@ -961,7 +971,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- FINANÇAS -->
 <section id="financas" class="dark">
-  <div class="sec-foto" style="--foto:url(img/chef-lampadas.webp);--pos:center 4%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--foto:url(img/chef-empratando.webp);--pos:center 50%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Projeção financeira</p>
@@ -1010,7 +1020,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- IMPLANTAÇÃO -->
 <section id="roadmap" class="dark" style="border-top:1px solid var(--line-d)">
-  <div class="sec-foto" style="--foto:url(img/hero-cozinha.webp);--pos:center 30%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--foto:url(img/chef-flambe.webp);--pos:center 40%" aria-hidden="true"></div>
   <canvas class="faiscas" data-quantidade="20" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="sec-head">
@@ -1040,7 +1050,9 @@ html .ast-form button{background:var(--orange);color:#140A03}
 </section>
 
 <!-- INVESTIMENTO E JURÍDICO -->
-<section>
+<section id="investimento">
+  <div class="sec-foto pan" style="--op:.42;--foto:url(img/empratamento.webp);--pos:center 45%" aria-hidden="true"></div>
+  <canvas class="faiscas" data-quantidade="15" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Investimento inicial</p>
@@ -1063,7 +1075,7 @@ html .ast-form button{background:var(--orange);color:#140A03}
 
 <!-- FECHAMENTO -->
 <section class="dark closing">
-  <div class="sec-foto forte" style="--foto:url(img/hero-cozinha.webp)" aria-hidden="true"></div>
+  <div class="sec-foto" style="--op:.45;--foto:url(img/mesa-amigos.webp);--pos:center 40%" aria-hidden="true"></div>
   <canvas class="faiscas" data-quantidade="30" aria-hidden="true"></canvas>
   <div class="wrap" style="display:grid;gap:28px">
     <p class="eyebrow">Talentos · Fornecedores · Capacitação · Negócios</p>
