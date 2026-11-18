@@ -315,7 +315,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <!-- Tema "cozinha à noite": sobrescreve o visual claro. Tirar este bloco volta ao visual antigo. -->
 <style id="tema-noturno">
 :root{
-  --bg:#0E0D0C; --glass:#181614; --glass-a:rgba(24,22,20,.72);
+  --bg:#1A1612; --glass:#181614; --glass-a:rgba(24,22,20,.72);
   --edge:rgba(255,107,44,.2); --edge-hi:rgba(255,107,44,.5); --glow:rgba(255,107,44,.35);
   --txt:#F6F2EE; --txt-2:#C9C0B7; --muted:#A79D94; --line:rgba(255,255,255,.08);
   color-scheme:dark;
@@ -371,18 +371,18 @@ th,td{border-color:var(--line)}
 footer{background:var(--bg);border-top:1px solid var(--edge)}
 
 /* Header em pílula de vidro */
-header.top{background:linear-gradient(180deg,rgba(14,13,12,.85),rgba(14,13,12,.55));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.04)}
+header.top{background:linear-gradient(180deg,rgba(26,22,18,.85),rgba(26,22,18,.55));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.04)}
 nav.links{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px;margin-right:4px}
 nav.links a:hover{background:rgba(255,107,44,.14);color:#fff}
 
 /* Hero com foto */
 .hero{padding-block:clamp(56px,8vw,110px) clamp(64px,9vw,120px);min-height:min(92vh,860px);display:grid;align-items:center}
 .hero::after{display:none}
-.hero-foto{position:absolute;inset:0;z-index:-2;background:#0E0D0C url(img/hero-cozinha.webp) center right/cover no-repeat}
+.hero-foto{position:absolute;inset:0;z-index:-2;background:#1A1612 url(img/hero-cozinha.webp) center right/cover no-repeat}
 .hero-foto::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(14,13,12,.97) 0%,rgba(14,13,12,.9) 34%,rgba(14,13,12,.45) 62%,rgba(14,13,12,.25) 100%),
-  linear-gradient(0deg,#0E0D0C 0%,transparent 28%),radial-gradient(ellipse at 70% 60%,rgba(240,120,50,.18),transparent 60%)}
-@media (max-width:960px){.hero-foto{background-position:70% top;background-size:auto 70%}.hero-foto::after{background:linear-gradient(180deg,rgba(14,13,12,.45) 0%,rgba(14,13,12,.78) 30%,rgba(14,13,12,.92) 55%,#0E0D0C 75%)}}
+  linear-gradient(90deg,rgba(26,22,18,.9) 0%,rgba(26,22,18,.72) 36%,rgba(26,22,18,.25) 64%,rgba(26,22,18,.08) 100%),
+  linear-gradient(0deg,#1A1612 0%,transparent 28%),radial-gradient(ellipse at 70% 60%,rgba(240,120,50,.18),transparent 60%)}
+@media (max-width:960px){.hero-foto{background-position:70% top;background-size:auto 70%}.hero-foto::after{background:linear-gradient(180deg,rgba(26,22,18,.45) 0%,rgba(26,22,18,.78) 30%,rgba(26,22,18,.92) 55%,#1A1612 75%)}}
 .faiscas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .hero h1{text-shadow:0 2px 30px rgba(0,0,0,.6)}
 .hero h1 em{color:#FF7A2E;text-shadow:0 0 2px rgba(255,200,150,.6),0 0 18px rgba(255,107,44,.75),0 0 46px rgba(255,107,44,.45)}
@@ -422,17 +422,19 @@ nav.links a:hover{background:rgba(255,107,44,.14);color:#fff}
 
 /* Fotos reais de fundo com zoom lento (Ken Burns). A imagem só carrega perto da tela (classe .on via JS). */
 .sec-foto{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
-.sec-foto::before{content:"";position:absolute;inset:0;background:var(--pos,center)/cover no-repeat;opacity:.46;transform-origin:center;will-change:transform}
+.sec-foto::before{content:"";position:absolute;inset:0;background:var(--pos,center)/cover no-repeat;opacity:var(--op,.62);transform-origin:center;will-change:transform}
 .sec-foto.on::before,html:not(.js) .sec-foto::before{background-image:var(--foto)}
-.sec-foto.forte::before{opacity:.55}
+.sec-foto.forte::before{opacity:.72}
 .sec-foto::after{content:"";position:absolute;inset:0;background:
-  radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(14,13,12,.6) 100%),
-  linear-gradient(180deg,#0E0D0C 0%,rgba(14,13,12,.4) 50%,#0E0D0C 100%)}
+  radial-gradient(ellipse at 50% 50%,transparent 55%,rgba(26,22,18,.45) 100%),
+  linear-gradient(180deg,#1A1612 0%,rgba(26,22,18,.2) 22%,rgba(26,22,18,.2) 78%,#1A1612 100%)}
 @keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.08)}}
 @media (prefers-reduced-motion:no-preference){
   .sec-foto.on::before,.hero-foto{animation:kenBurns 20s ease-in-out infinite alternate}
 }
 .hero-foto{transform-origin:70% 50%}
+@media (max-width:960px){.sec-foto::before,.hero-foto{animation:none!important;will-change:auto}
+  .stat,.mod,.step,.price-col,.split,.swot div,.tbl-wrap,.inv article,.result,.explain,.phases div,.mvv article,.screen-btn,.app-cta,.road article,.aud>div,.months{backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important}}
 main>section{overflow:clip}
 
 /* Vidro fosco: a foto aparece sutil por trás */
@@ -454,9 +456,9 @@ main>section{overflow:clip}
 @media (max-width:700px){.follow::before{display:none}.follow div::before{top:-14px}}
 
 /* Entrada suave (fade-up) */
-html.js .revela{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-html.js .revela.visto{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html.js .revela{opacity:1;transform:none;transition:none}}
+html.js .revela{opacity:0;translate:0 24px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.7,.2,1),transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease}
+html.js .revela.visto{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){html.js .revela{opacity:1;translate:none;transition:none}}
 
 /* Fechamento com foto e brasas */
 .closing{padding-block:clamp(90px,12vw,160px)}
@@ -502,17 +504,118 @@ html.js .revela.visto{opacity:1;transform:none}
 .grafico .ponto{fill:#fff;stroke:#2FBF71;stroke-width:3;filter:drop-shadow(0 0 6px #2FBF71)}
 .grafico .rotulo{font:700 10px var(--f-body);fill:#8CF0BE}
 
+/* Texto direto sobre foto ganha sombra para manter a leitura */
+main>section .sec-head>*,.follow span,.follow strong,.quote-big,.pain-list li,.closing .lead,.closing .eyebrow,.hero .lead,.hero .eyebrow{text-shadow:0 1px 2px rgba(0,0,0,.9),0 2px 14px rgba(0,0,0,.75)}
+.follow span{color:#E2DAD2}
+
+/* ===== Jornada: etapas ligadas e marcos 7/30/60/90 ===== */
+.step{position:relative;border:1px solid rgba(255,107,44,.18)!important;transition:all .3s ease}
+.step:hover{border-color:rgba(255,107,44,.55)!important;transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(255,107,44,.55)!important}
+@media (min-width:901px){
+  .step:not(:last-child)::after{content:"";position:absolute;right:-6px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#FF8A45;box-shadow:0 0 0 3px rgba(255,107,44,.25),0 0 12px #FF6B2C;transform:translateX(50%);z-index:2}
+}
+.follow::before{box-shadow:0 0 15px rgba(255,107,44,.6)!important}
+.follow div::before{transition:all .3s ease}
+.follow div{transition:all .3s ease;border-radius:12px}
+.follow div:hover::before{transform:scale(1.6);background:#FFD0A8;box-shadow:0 0 0 6px rgba(255,107,44,.35),0 0 26px #FF6B2C}
+.follow div:hover strong{color:#FFB070}
+
+/* ===== Público-alvo: 3 cards de vidro com ícone ===== */
+.aud{gap:20px;align-items:stretch}
+.aud>div{background:rgba(24,22,20,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,107,44,.18);border-radius:var(--r);padding:22px;transition:all .3s ease;
+  display:grid;grid-template-columns:auto 1fr;align-content:start;column-gap:14px}
+.aud>div:hover{border-color:rgba(255,107,44,.45);box-shadow:0 18px 40px -20px rgba(255,107,44,.5)}
+.aud h3{align-self:center;margin-bottom:0!important;font-size:1.3rem}
+.aud .tags{grid-column:1/-1;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,107,44,.15)}
+.aud-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,176,112,.25),rgba(255,107,44,.12));box-shadow:inset 0 0 0 1px rgba(255,107,44,.55),0 0 24px -6px rgba(255,107,44,.9)}
+.aud-ic svg{width:26px;height:26px;fill:none;stroke:#FF8A45;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,107,44,.8))}
+.aud .tags span{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.12)!important;color:#E7E0D9;transition:all .3s ease;cursor:default}
+.aud .tags span:hover{border-color:#FF6B2C!important;background:rgba(255,107,44,.12)!important;color:#fff;box-shadow:0 0 14px -4px rgba(255,107,44,.8)}
+
+/* ===== Modelo de negócio: topo iluminado e valores em destaque ===== */
+.price-col{border:1px solid rgba(255,107,44,.18)!important;transition:all .3s ease}
+.price-col h3{background:linear-gradient(180deg,rgba(255,107,44,.3),rgba(255,107,44,.05))!important;border-bottom:1px solid rgba(255,107,44,.35)!important;box-shadow:inset 0 2px 0 rgba(255,170,110,.5)}
+.price-col h3 small{color:#FFB070}
+.plist b{color:#fff;font-weight:800;font-size:1rem}
+.plist li:first-child b{color:#FF8A45;text-shadow:0 0 12px rgba(255,107,44,.6)}
+.plist li{transition:all .3s ease}
+.plist li:hover{padding-left:6px}
+.price-col:hover{transform:translateY(-3px);border-color:rgba(255,107,44,.5)!important;box-shadow:0 18px 40px -20px rgba(255,107,44,.55)!important}
+
+/* ===== Implantação: versões, cronograma e fases ===== */
+.road{gap:18px;align-items:stretch}
+.road article{position:relative;border:1px solid rgba(255,107,44,.15);border-radius:var(--r);padding:24px 22px;
+  background:rgba(24,22,20,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:all .3s ease}
+.road article:hover{border-color:rgba(255,107,44,.45);transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(255,107,44,.45)}
+.road article.atual{border-color:#FF6B2C;background:linear-gradient(180deg,rgba(255,107,44,.12),rgba(24,22,20,.78));animation:pulsa 2.6s ease-in-out infinite}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 1px rgba(255,107,44,.35),0 0 24px -6px rgba(255,107,44,.55)}50%{box-shadow:0 0 0 1px rgba(255,107,44,.7),0 0 44px -4px rgba(255,107,44,.85)}}
+.selo{position:absolute;top:-11px;right:16px;font:600 .66rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#140A03;background:linear-gradient(90deg,#FFB070,#FF6B2C);padding:4px 10px;border-radius:999px;box-shadow:0 0 18px rgba(255,107,44,.8)}
+.road h3{font-size:1.5rem}
+.road ul{list-style:none;padding:0;gap:8px;color:var(--txt-2)}
+.road li{position:relative;padding-left:26px}
+.road li::before{content:"";position:absolute;left:0;top:.25em;width:16px;height:16px;border-radius:50%;background:rgba(255,107,44,.15);box-shadow:inset 0 0 0 1px rgba(255,107,44,.6)}
+.road li::after{content:"";position:absolute;left:5px;top:calc(.25em + 4px);width:6px;height:3.5px;border-left:2px solid #FF8A45;border-bottom:2px solid #FF8A45;transform:rotate(-45deg)}
+
+.months{gap:10px;padding:22px;border:1px solid rgba(255,107,44,.15);border-radius:var(--r);background:rgba(24,22,20,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.mrow{transition:all .3s ease;border-radius:10px;padding:2px 6px}
+.mrow:hover{background:rgba(255,107,44,.06)}
+.mrow:hover b{color:var(--orange)}
+.mrow b{transition:all .3s ease}
+.mtrack{position:relative;gap:10px}
+.mtrack::before{content:"";position:absolute;left:4%;right:4%;top:50%;height:1px;background:rgba(255,255,255,.12)}
+.mtrack i{position:relative;height:32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:all .3s ease;cursor:default}
+.mtrack i:hover{transform:translateY(-2px) scale(1.05);border-color:rgba(255,107,44,.5);color:var(--txt)}
+.mtrack i.on{background:linear-gradient(180deg,#FF8A45,#E8641F);border-color:#FFB070;color:#140A03;box-shadow:0 0 18px -2px rgba(255,107,44,.85)}
+.mtrack i.on+i.on::before{content:"";position:absolute;right:100%;top:50%;width:10px;height:2px;background:#FF8A45;box-shadow:0 0 8px #FF6B2C}
+
+.phases{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.phases>div{display:grid!important;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:16px!important;border:1px solid rgba(255,107,44,.18)!important;transition:all .3s ease}
+.phases>div:hover{border-color:rgba(255,107,44,.5)!important;transform:translateY(-2px);box-shadow:0 14px 30px -16px rgba(255,107,44,.5)}
+.phases p{margin:0;display:grid;gap:2px}
+.phases p span:first-child{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--orange);text-transform:uppercase}
+.fase-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,107,44,.12);box-shadow:inset 0 0 0 1px rgba(255,107,44,.45),0 0 18px -6px rgba(255,107,44,.8)}
+.fase-ic svg{width:20px;height:20px;fill:none;stroke:#FF8A45;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fase-mapa{width:52px;height:52px;fill:rgba(255,107,44,.08);stroke:rgba(255,140,70,.45);stroke-width:1.5;stroke-linejoin:round}
+.fase-mapa circle:last-of-type{fill:#FF6B2C;stroke:none;filter:drop-shadow(0 0 4px #FF6B2C)}
+.fase-mapa .anel{fill:none}
+@media (max-width:560px){.phases{grid-template-columns:1fr}}
+
+/* ===== Três caminhos: cartões de preço 3D ===== */
+.inv{perspective:1200px;gap:22px;align-items:stretch}
+.inv article{position:relative;padding:30px 26px!important;border:1px solid rgba(255,255,255,.12)!important;transform-style:preserve-3d;transition:all .3s ease;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 0 rgba(0,0,0,.6),0 30px 50px -28px rgba(0,0,0,.95)!important}
+.inv article:hover{transform:translateY(-6px) rotateX(3deg);border-color:rgba(255,107,44,.5)!important}
+.inv strong{font-size:clamp(1.6rem,2.5vw,2.15rem);color:#fff;line-height:1.1}
+.inv article.rec{border:2px solid #FF6B2C!important;transform:translateY(-10px) scale(1.03);
+  background:radial-gradient(120% 80% at 50% 0%,rgba(255,107,44,.32),transparent 60%),linear-gradient(180deg,rgba(60,32,18,.9),rgba(24,20,18,.9))!important;
+  box-shadow:0 0 0 1px rgba(255,170,110,.35),0 0 60px -6px rgba(255,107,44,.75),0 40px 60px -30px rgba(0,0,0,.9)!important;animation:pulsa 2.6s ease-in-out infinite}
+.inv article.rec:hover{transform:translateY(-14px) scale(1.04) rotateX(3deg)}
+.inv article.rec strong{color:#FFB070;text-shadow:0 0 22px rgba(255,107,44,.7)}
+.inv article.rec .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#FFB070,#FF6B2C);color:#140A03;border:0;font-size:.7rem;padding:5px 14px;box-shadow:0 0 22px rgba(255,107,44,.9)}
+.stack{gap:10px;margin-top:26px}
+.stack span{background:#100E0D!important;color:#E9E1D9!important;border:1px solid rgba(255,107,44,.35)!important;border-radius:999px!important;padding:7px 14px!important;box-shadow:0 0 12px -4px rgba(255,107,44,.6),inset 0 1px 0 rgba(255,255,255,.05);transition:all .3s ease}
+.stack span:hover{border-color:#FF8A45!important;box-shadow:0 0 18px -2px rgba(255,107,44,.9)}
+
+/* ===== Jurídico: 3 colunas com ícones ===== */
+.legal{gap:22px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,107,44,.15)}
+.legal article{grid-template-columns:auto 1fr;column-gap:16px;align-items:start;padding:20px;border-radius:var(--r);border:1px solid transparent;transition:all .3s ease}
+.legal article:hover{border-color:rgba(255,107,44,.3);background:rgba(24,22,20,.6)}
+.legal article>*:not(.leg-ic){grid-column:2}
+.leg-ic{grid-row:1/span 3;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(255,107,44,.12);box-shadow:inset 0 0 0 1px rgba(255,107,44,.5),0 0 24px -6px rgba(255,107,44,.9)}
+.leg-ic svg{width:24px;height:24px;fill:none;stroke:#FF8A45;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,107,44,.8))}
+@media (prefers-reduced-motion:reduce){.road article.atual,.inv article.rec{animation:none}}
+
 /* Chat e QR no visual novo */
 .ast-btn{box-shadow:0 0 0 1px rgba(255,160,90,.5),0 10px 34px -4px rgba(255,107,44,.7)}
 .ast-painel{background:#141210;color:var(--txt);border-color:var(--edge-hi);box-shadow:0 0 0 1px rgba(255,107,44,.12),0 30px 70px -10px rgba(0,0,0,.9),0 0 60px -20px var(--glow)}
 .ast-topo{background:linear-gradient(180deg,#1E1A17,#141210);border-bottom:1px solid var(--edge)}
-.ast-msgs{background:#0E0D0C}
+.ast-msgs{background:#1A1612}
 .ast-msg.ia{background:#1E1A17;border-color:rgba(255,255,255,.08);color:var(--txt)}
 .ast-msg.digitando{color:var(--muted)}
 .ast-chip{background:rgba(255,107,44,.1);border-color:var(--edge-hi);color:#FFD0B0}
 .ast-chip:hover{background:rgba(255,107,44,.2)}
 .ast-form{background:#141210;border-top-color:var(--edge)}
-.ast-form input{background:#0E0D0C;border-color:rgba(255,255,255,.14);color:var(--txt)}
+.ast-form input{background:#1A1612;border-color:rgba(255,255,255,.14);color:var(--txt)}
 .ast-form button{background:var(--orange);color:#140A03}
 .qr-box{box-shadow:0 0 0 1px rgba(255,170,110,.5),0 0 34px -4px rgba(255,107,44,.6)}
 </style>
@@ -577,7 +680,7 @@ html.js .revela.visto{opacity:1;transform:none}
 
 <!-- PROBLEMA -->
 <section id="problema">
-  <div class="sec-foto" style="--foto:url(img/salao-bar.webp)" aria-hidden="true"></div>
+  <div class="sec-foto" style="--op:.4;--foto:url(img/salao-bar.webp)" aria-hidden="true"></div>
   <div class="wrap problem-grid">
     <div style="display:grid;gap:24px">
       <p class="eyebrow">O problema</p>
@@ -604,7 +707,7 @@ html.js .revela.visto{opacity:1;transform:none}
 
 <!-- IDENTIDADE -->
 <section class="dark">
-  <div class="sec-foto" style="--foto:url(img/salao-bar.webp);--pos:center 70%" aria-hidden="true"></div>
+  <div class="sec-foto" style="--op:.4;--foto:url(img/salao-bar.webp);--pos:center 70%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Identidade organizacional</p>
@@ -727,6 +830,7 @@ html.js .revela.visto{opacity:1;transform:none}
 
 <!-- JORNADA -->
 <section class="tint">
+  <div class="sec-foto" style="--foto:url(img/hero-cozinha.webp);--pos:center 20%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Chef's Match RH</p>
@@ -752,21 +856,23 @@ html.js .revela.visto{opacity:1;transform:none}
 
 <!-- PÚBLICO -->
 <section class="dark">
+  <div class="sec-foto" style="--op:.4;--foto:url(img/salao-bar.webp);--pos:center 40%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Público-alvo</p>
       <h2>Toda a cadeia gastronômica</h2>
     </div>
     <div class="aud">
-      <div><h3>Profissionais</h3><div class="tags"><span>Chefs e subchefs</span><span>Cozinheiros</span><span>Auxiliares de cozinha</span><span>Confeiteiros</span><span>Padeiros</span><span>Churrasqueiros</span><span>Sushimans</span><span>Garçons</span><span>Bartenders</span><span>Baristas</span><span>Sommeliers</span><span>Maîtres</span><span>Gerentes</span><span>Estoquistas</span><span>Primeiro emprego</span></div></div>
-      <div><h3>Estabelecimentos</h3><div class="tags"><span>Restaurantes</span><span>Bares</span><span>Hotéis</span><span>Cafeterias</span><span>Padarias</span><span>Confeitarias</span><span>Buffets</span><span>Cozinhas industriais</span><span>Dark kitchens</span><span>Delivery</span><span>Redes e grupos</span></div></div>
-      <div><h3>Fornecedores e parceiros</h3><div class="tags"><span>Hortifruti</span><span>Carnes e aves</span><span>Pescados</span><span>Bebidas</span><span>Embalagens</span><span>Equipamentos</span><span>Utensílios</span><span>Limpeza profissional</span><span>Escolas de gastronomia</span><span>Instrutores e consultores</span></div></div>
+      <div><i class="aud-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 11V8.6A3.6 3.6 0 0 1 8.6 2a4 4 0 0 1 6.8 0A3.6 3.6 0 0 1 17 8.6V11z"/><path d="M7 11h10v2H7z"/><circle cx="12" cy="17" r="3"/><path d="M6 22c.6-2 3-3 6-3s5.4 1 6 3"/></svg></i><h3>Profissionais</h3><div class="tags"><span>Chefs e subchefs</span><span>Cozinheiros</span><span>Auxiliares de cozinha</span><span>Confeiteiros</span><span>Padeiros</span><span>Churrasqueiros</span><span>Sushimans</span><span>Garçons</span><span>Bartenders</span><span>Baristas</span><span>Sommeliers</span><span>Maîtres</span><span>Gerentes</span><span>Estoquistas</span><span>Primeiro emprego</span></div></div>
+      <div><i class="aud-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 11v10h14V11"/><path d="M10 21v-5h4v5"/></svg></i><h3>Estabelecimentos</h3><div class="tags"><span>Restaurantes</span><span>Bares</span><span>Hotéis</span><span>Cafeterias</span><span>Padarias</span><span>Confeitarias</span><span>Buffets</span><span>Cozinhas industriais</span><span>Dark kitchens</span><span>Delivery</span><span>Redes e grupos</span></div></div>
+      <div><i class="aud-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3.5L22 13v4h-6"/><circle cx="7" cy="18" r="1.8"/><circle cx="18" cy="18" r="1.8"/></svg></i><h3>Fornecedores e parceiros</h3><div class="tags"><span>Hortifruti</span><span>Carnes e aves</span><span>Pescados</span><span>Bebidas</span><span>Embalagens</span><span>Equipamentos</span><span>Utensílios</span><span>Limpeza profissional</span><span>Escolas de gastronomia</span><span>Instrutores e consultores</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- MODELO DE NEGÓCIO -->
 <section id="negocio">
+  <div class="sec-foto" style="--foto:url(img/pratos.webp);--pos:center 30%" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Modelo de negócio</p>
@@ -908,6 +1014,8 @@ html.js .revela.visto{opacity:1;transform:none}
 
 <!-- IMPLANTAÇÃO -->
 <section id="roadmap" class="dark" style="border-top:1px solid var(--line-d)">
+  <div class="sec-foto" style="--foto:url(img/hero-cozinha.webp);--pos:center 30%" aria-hidden="true"></div>
+  <canvas class="faiscas" data-quantidade="20" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Implantação</p>
@@ -915,7 +1023,7 @@ html.js .revela.visto{opacity:1;transform:none}
       <p class="lead">Desenvolvimento em etapas para preservar o investimento e validar cada módulo com usuários reais de Brasília.</p>
     </div>
     <div class="road">
-      <article><h3>Versão 1</h3><ul><li>Cadastro e login</li><li>Perfis de profissional, empresa e fornecedor</li><li>Publicação de vagas e candidaturas</li><li>Acompanhamento das etapas seletivas</li><li>Catálogo básico e solicitação de cotação</li><li>Painel administrativo, denúncias e moderação</li></ul></article>
+      <article class="atual"><span class="selo">Foco inicial</span><h3>Versão 1</h3><ul><li>Cadastro e login</li><li>Perfis de profissional, empresa e fornecedor</li><li>Publicação de vagas e candidaturas</li><li>Acompanhamento das etapas seletivas</li><li>Catálogo básico e solicitação de cotação</li><li>Painel administrativo, denúncias e moderação</li></ul></article>
       <article><h3>Versão 2</h3><ul><li>Programa 7, 30, 60 e 90 dias</li><li>Cursos introdutórios</li><li>Notificações</li><li>Assinaturas comerciais</li><li>Integração com provedor de pagamentos e split</li></ul></article>
       <article><h3>Versão 3</h3><ul><li>Academy ampliada</li><li>Recrutamento assistido</li><li>Avaliações e reputação completas</li><li>IA para recomendações</li><li>Gestão de pedidos e recursos comerciais avançados</li></ul></article>
     </div>
@@ -927,10 +1035,10 @@ html.js .revela.visto{opacity:1;transform:none}
       <div class="mrow"><b>Piloto e lançamento</b><div class="mtrack"><i>M1</i><i>M2</i><i>M3</i><i>M4</i><i>M5</i><i class="on">M6</i></div></div>
     </div>
     <div class="phases">
-      <div><span>Fase 1</span><b>Brasília</b><span>Asa Norte, Asa Sul, Plano Piloto, Águas Claras, Taguatinga</span></div>
-      <div><span>Fase 2</span><b>Distrito Federal</b><span>Mais estabelecimentos e categorias de fornecedores</span></div>
-      <div><span>Fase 3</span><b>Centro-Oeste</b><span>Outras cidades conforme a demanda</span></div>
-      <div><span>Fase 4</span><b>Brasil</b><span>Plataforma nacional de conexão gastronômica</span></div>
+      <div><i class="fase-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><p><span>Fase 1</span><b>Brasília</b><span>Asa Norte, Asa Sul, Plano Piloto, Águas Claras, Taguatinga</span></p><svg class="fase-mapa" viewBox="0 0 60 60" aria-hidden="true"><circle class="anel" cx="30" cy="30" r="20"/><circle class="anel" cx="30" cy="30" r="12"/><circle cx="30" cy="30" r="4"/></svg></div>
+      <div><i class="fase-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></i><p><span>Fase 2</span><b>Distrito Federal</b><span>Mais estabelecimentos e categorias de fornecedores</span></p><svg class="fase-mapa" viewBox="0 0 60 60" aria-hidden="true"><path d="M12 18h36v26H12z"/><circle cx="30" cy="30" r="3"/></svg></div>
+      <div><i class="fase-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i><p><span>Fase 3</span><b>Centro-Oeste</b><span>Outras cidades conforme a demanda</span></p><svg class="fase-mapa" viewBox="0 0 60 60" aria-hidden="true"><path d="M10 14l18-6 14 8 8 16-6 18-20 4-12-12-6-14z"/><circle cx="36" cy="34" r="3"/></svg></div>
+      <div><i class="fase-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></i><p><span>Fase 4</span><b>Brasil</b><span>Plataforma nacional de conexão gastronômica</span></p><svg class="fase-mapa" viewBox="0 0 60 60" aria-hidden="true"><path d="M14 10l14-4 10 6 12 2 6 10-4 12-10 6-4 10-8 2-4-8-10-6-6-10 2-10z"/><circle cx="34" cy="30" r="3"/></svg></div>
     </div>
   </div>
 </section>
@@ -950,9 +1058,9 @@ html.js .revela.visto{opacity:1;transform:none}
     <div class="stack" aria-label="Tecnologias sugeridas"><span>FlutterFlow · app</span><span>Supabase · banco e login</span><span>Figma · protótipo</span><span>WhatsApp Business · atendimento</span><span>Provedor de pagamentos para marketplace</span></div>
 
     <div class="legal">
-      <article><p class="eyebrow">Segurança jurídica</p><h3>Relações de trabalho</h3><p>A plataforma aproxima as partes. Quem contrata formaliza o vínculo e cumpre as obrigações trabalhistas. O trabalhador nunca paga para ter acesso às vagas.</p></article>
-      <article><p class="eyebrow">LGPD</p><h3>Proteção de dados</h3><p>Coleta mínima, controle de acesso, política de privacidade, canal para o titular e regras de retenção e exclusão. A IA recomenda; o RH decide.</p></article>
-      <article><p class="eyebrow">Marca</p><h3>Antes de lançar</h3><p>Pesquisar o nome no INPI, verificar domínio e lojas de aplicativos e registrar a marca nas classes adequadas.</p></article>
+      <article><i class="leg-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M6 21h12M4 7h16"/><path d="M4 7l-2.5 6a3 3 0 0 0 5 0zM20 7l-2.5 6a3 3 0 0 0 5 0z"/></svg></i><p class="eyebrow">Segurança jurídica</p><h3>Relações de trabalho</h3><p>A plataforma aproxima as partes. Quem contrata formaliza o vínculo e cumpre as obrigações trabalhistas. O trabalhador nunca paga para ter acesso às vagas.</p></article>
+      <article><i class="leg-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><rect x="9" y="10" width="6" height="5" rx="1"/><path d="M10 10V8.5a2 2 0 0 1 4 0V10"/></svg></i><p class="eyebrow">LGPD</p><h3>Proteção de dados</h3><p>Coleta mínima, controle de acesso, política de privacidade, canal para o titular e regras de retenção e exclusão. A IA recomenda; o RH decide.</p></article>
+      <article><i class="leg-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="14" r="3"/><path d="M11 14h2M12 13v2"/></svg></i><p class="eyebrow">Marca</p><h3>Antes de lançar</h3><p>Pesquisar o nome no INPI, verificar domínio e lojas de aplicativos e registrar a marca nas classes adequadas.</p></article>
     </div>
   </div>
 </section>
