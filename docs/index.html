@@ -603,20 +603,20 @@ main>section .sec-head>*,.follow span,.follow strong,.quote-big,.pain-list li,.c
 .legal article>*:not(.leg-ic){grid-column:2}
 .leg-ic{grid-row:1/span 3;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(255,107,44,.12);box-shadow:inset 0 0 0 1px rgba(255,107,44,.5),0 0 24px -6px rgba(255,107,44,.9)}
 .leg-ic svg{width:24px;height:24px;fill:none;stroke:#FF8A45;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,107,44,.8))}
-@media (prefers-reduced-motion:reduce){.road article.atual,.inv article.rec{animation:none}}
+@media (prefers-reduced-motion:reduce),(max-width:960px){.road article.atual,.inv article.rec{animation:none}}
 
 /* Chat e QR no visual novo */
-.ast-btn{box-shadow:0 0 0 1px rgba(255,160,90,.5),0 10px 34px -4px rgba(255,107,44,.7)}
-.ast-painel{background:#141210;color:var(--txt);border-color:var(--edge-hi);box-shadow:0 0 0 1px rgba(255,107,44,.12),0 30px 70px -10px rgba(0,0,0,.9),0 0 60px -20px var(--glow)}
-.ast-topo{background:linear-gradient(180deg,#1E1A17,#141210);border-bottom:1px solid var(--edge)}
-.ast-msgs{background:#1A1612}
-.ast-msg.ia{background:#1E1A17;border-color:rgba(255,255,255,.08);color:var(--txt)}
-.ast-msg.digitando{color:var(--muted)}
-.ast-chip{background:rgba(255,107,44,.1);border-color:var(--edge-hi);color:#FFD0B0}
-.ast-chip:hover{background:rgba(255,107,44,.2)}
-.ast-form{background:#141210;border-top-color:var(--edge)}
-.ast-form input{background:#1A1612;border-color:rgba(255,255,255,.14);color:var(--txt)}
-.ast-form button{background:var(--orange);color:#140A03}
+html .ast-btn{box-shadow:0 0 0 1px rgba(255,160,90,.5),0 10px 34px -4px rgba(255,107,44,.7)}
+html .ast-painel{background:#141210;color:var(--txt);border-color:var(--edge-hi);box-shadow:0 0 0 1px rgba(255,107,44,.12),0 30px 70px -10px rgba(0,0,0,.9),0 0 60px -20px var(--glow)}
+html .ast-topo{background:linear-gradient(180deg,#1E1A17,#141210);border-bottom:1px solid var(--edge)}
+html .ast-msgs{background:#1A1612}
+html .ast-msg.ia{background:#1E1A17;border-color:rgba(255,255,255,.08);color:var(--txt)}
+html .ast-msg.digitando{color:var(--muted)}
+html .ast-chip{background:rgba(255,107,44,.1);border-color:var(--edge-hi);color:#FFD0B0}
+html .ast-chip:hover{background:rgba(255,107,44,.2)}
+html .ast-form{background:#141210;border-top-color:var(--edge)}
+html .ast-form input{background:#1A1612;border-color:rgba(255,255,255,.14);color:var(--txt)}
+html .ast-form button{background:var(--orange);color:#140A03}
 .qr-box{box-shadow:0 0 0 1px rgba(255,170,110,.5),0 0 34px -4px rgba(255,107,44,.6)}
 </style>
 
@@ -1357,7 +1357,7 @@ function iniciarFaiscas(canvas,quantidade){
   quantidade=quantidade||40;
   if(!canvas||!canvas.getContext)return;
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var ctx=canvas.getContext('2d'),w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),ps=[],ativo=false,visivel=true,raf=0,ultimo=0;
+  var brilho=!(window.matchMedia&&matchMedia('(max-width:960px)').matches),ctx=canvas.getContext('2d'),w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),ps=[],ativo=false,visivel=true,raf=0,ultimo=0;
   function medir(){var r=canvas.getBoundingClientRect();w=r.width;h=r.height;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
   function nova(p,inicio){p=p||{};p.x=Math.random()*w;p.y=inicio?Math.random()*h:h+10;p.r=.6+Math.random()*1.8;p.vy=18+Math.random()*42;p.vx=-8+Math.random()*16;p.fase=Math.random()*6.28;p.vida=0;p.max=3+Math.random()*5;p.cor=Math.random()<.7?'255,140,60':'255,196,120';return p}
   function passo(t){
@@ -1367,7 +1367,7 @@ function iniciarFaiscas(canvas,quantidade){
     for(var i=0;i<ps.length;i++){var p=ps[i];p.vida+=dt;p.y-=p.vy*dt;p.x+=(p.vx+Math.sin(p.fase+p.vida*2)*10)*dt;
       var a=Math.max(0,1-p.vida/p.max)*(.55+.45*Math.sin(p.fase+p.vida*7));
       if(p.y<-10||p.vida>p.max){nova(p,false);continue}
-      ctx.beginPath();ctx.fillStyle='rgba('+p.cor+','+a.toFixed(3)+')';ctx.shadowBlur=8;ctx.shadowColor='rgba(255,120,40,'+a.toFixed(3)+')';ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill()}
+      ctx.beginPath();ctx.fillStyle='rgba('+p.cor+','+a.toFixed(3)+')';ctx.shadowBlur=brilho?8:0;ctx.shadowColor='rgba(255,120,40,'+a.toFixed(3)+')';ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill()}
     raf=requestAnimationFrame(passo)}
   function atualizar(){var deve=visivel&&!document.hidden;if(deve&&!ativo){ativo=true;ultimo=0;raf=requestAnimationFrame(passo)}else if(!deve&&ativo){ativo=false;cancelAnimationFrame(raf)}}
   medir();for(var i=0;i<quantidade;i++)ps.push(nova(null,true));
@@ -1394,16 +1394,20 @@ document.querySelectorAll('canvas.faiscas').forEach(function(c){iniciarFaiscas(c
   else alvos.forEach(function(el){el.classList.add('visto')});
 
   // Contadores: anima só a parte numérica e termina exatamente no texto original.
-  function contar(el){
-    var original=el.textContent,m=original.match(/^(\D*)([\d.,]+)(.*)$/);if(!m)return;
+  // Começa já no zero (sem piscar o valor real antes) e conta até o valor original quando aparece.
+  function preparar(el){
+    var original=el.textContent,m=original.match(/^(\D*)([\d.,]+)(.*)$/);if(!m)return null;
     var bruto=m[2],virgula=bruto.indexOf(',')>=0,casas=virgula?bruto.split(',')[1].length:0;
-    var alvo=parseFloat(bruto.replace(/\./g,'').replace(',','.')),t0=null,dur=1400;
+    var alvo=parseFloat(bruto.replace(/\./g,'').replace(',','.')),dur=1400;
     function fmt(v){return v.toLocaleString('pt-BR',{minimumFractionDigits:casas,maximumFractionDigits:casas,useGrouping:bruto.indexOf('.')>=0})}
-    function passo(t){t0=t0||t;var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=m[1]+fmt(alvo*e)+m[3];if(p<1)requestAnimationFrame(passo);else el.textContent=original}
-    requestAnimationFrame(passo);
+    el.textContent=m[1]+fmt(0)+m[3];
+    return function(){var t0=null;function passo(t){t0=t0||t;var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=m[1]+fmt(alvo*e)+m[3];if(p<1)requestAnimationFrame(passo);else el.textContent=original}requestAnimationFrame(passo)};
   }
   var numeros=document.querySelectorAll('.stat strong,.follow strong');
-  if(temIO&&!calmo){var io3=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){contar(e.target);io3.unobserve(e.target)}})},{threshold:.6});numeros.forEach(function(n){io3.observe(n)})}
+  if(temIO&&!calmo){
+    var io3=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target._contar;if(f)f();io3.unobserve(e.target)}})},{threshold:.6});
+    numeros.forEach(function(n){n._contar=preparar(n);io3.observe(n)});
+  }
 })();
 </script>
 
