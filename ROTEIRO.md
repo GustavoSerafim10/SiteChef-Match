@@ -105,3 +105,5 @@ Passagem: "[Integrante 4] fecha com a estratégia e a implantação."
 - [ ] Testar o link do protótipo no computador da sala
 - [ ] Trocar `[Integrantes]`, `[Curso]` e `[Nome do professor]` na capa dos slides
 - [ ] Ensaiar a demonstração ao vivo pelo menos 2 vezes
+- [ ] Testar o QR code do slide 8 com a câmera de um celular
+- [ ] 10 minutos antes: abrir o site, clicar em **Dúvidas?** e fazer uma pergunta para conferir se a IA está respondendo (se não estiver, o chat mostra as respostas prontas sozinho)
