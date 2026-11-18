@@ -979,4 +979,89 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 })();
 </script>
 
+<!-- Assistente de dúvidas: chama o app (Vercel); se falhar, mostra respostas prontas. -->
+<style>
+.ast-btn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:80;display:flex;align-items:center;gap:8px;padding:14px 18px;border:0;border-radius:999px;background:var(--orange);color:var(--ink);font:700 1rem var(--f-body);box-shadow:0 8px 24px rgba(20,18,16,.3);cursor:pointer}
+.ast-btn:hover{background:#F48A4C}
+.ast-btn span{font-size:1.3rem;line-height:1}
+.ast-painel{position:fixed;right:16px;bottom:16px;z-index:90;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 32px));display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 48px rgba(20,18,16,.35);overflow:hidden}
+.ast-topo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--ink);color:#F6F2EE}
+.ast-topo b{font-family:var(--f-display);font-stretch:85%;font-size:1.1rem;text-transform:uppercase;letter-spacing:.01em}
+.ast-topo small{display:block;color:var(--muted-d);font-size:.78rem}
+.ast-fechar{border:0;background:transparent;color:#F6F2EE;font-size:1.6rem;line-height:1;padding:4px 8px;cursor:pointer;border-radius:8px}
+.ast-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--paper-2)}
+.ast-msg{max-width:88%;padding:10px 13px;border-radius:14px;font-size:.95rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.ast-msg.ia{align-self:flex-start;background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px}
+.ast-msg.eu{align-self:flex-end;background:var(--orange);color:var(--ink);border-bottom-right-radius:4px}
+.ast-msg.digitando{color:var(--muted);font-style:italic}
+.ast-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ast-chip{border:1px solid var(--orange-deep);background:var(--orange-soft);color:var(--ink);border-radius:999px;padding:6px 11px;font:500 .85rem var(--f-body);cursor:pointer;text-align:left}
+.ast-chip:hover{background:#FBD8C2}
+.ast-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:var(--paper)}
+.ast-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:16px var(--f-body);color:var(--ink);background:var(--paper)}
+.ast-form button{border:0;border-radius:10px;padding:0 16px;background:var(--ink);color:#F6F2EE;font:700 .95rem var(--f-body);cursor:pointer}
+.ast-form button:disabled{opacity:.5;cursor:default}
+@media (max-width:600px){.ast-painel{inset:0;width:100%;height:100dvh;border-radius:0;border:0}.ast-topo{padding-top:max(14px,env(safe-area-inset-top,0px))}}
+</style>
+
+<button class="ast-btn" id="ast-abrir" type="button" aria-label="Tirar dúvidas sobre o Chef's Match" aria-expanded="false" aria-controls="ast-painel"><span aria-hidden="true">💬</span> Dúvidas?</button>
+<div class="ast-painel" id="ast-painel" role="dialog" aria-label="Assistente do Chef's Match" hidden>
+  <div class="ast-topo"><div><b>Assistente Chef's Match</b><small>Pergunte o que quiser sobre o projeto</small></div><button class="ast-fechar" id="ast-fechar" type="button" aria-label="Fechar">×</button></div>
+  <div class="ast-msgs" id="ast-msgs" aria-live="polite"></div>
+  <form class="ast-form" id="ast-form"><input id="ast-campo" type="text" maxlength="500" placeholder="Escreva sua dúvida…" autocomplete="off" aria-label="Sua dúvida"><button id="ast-enviar" type="submit">Enviar</button></form>
+</div>
+
+<script>
+(function(){
+  var API='https://chef-match-app.vercel.app/api/assistente';
+  // Manter igual a chef-match-app/src/lib/assistente/faq.ts
+  var FAQ=[
+    {pergunta:'O que é o Chef’s Match?',resposta:'É uma plataforma que reúne quem trabalha, quem contrata e quem fornece para a gastronomia: vagas fixas e extras de última hora, cotação com fornecedores, capacitação (Academy) e conexão entre negócios. O lançamento é em Brasília/DF.'},
+    {pergunta:'Para quem é o app?',resposta:'Para três públicos: profissionais da gastronomia (garçons, cozinheiros, auxiliares…), restaurantes e outros estabelecimentos que contratam e compram, e fornecedores de insumos.'},
+    {pergunta:'Como o Chef’s Match ganha dinheiro?',resposta:'Com planos para empresas (R$ 149 a R$ 299 por mês) e fornecedores (R$ 99 a R$ 199), comissão de 2% a 5% nas compras do marketplace, cursos, recrutamento assistido e destaques. O profissional nunca paga para ver vagas. Os valores são hipóteses acadêmicas do projeto.'},
+    {pergunta:'Qual é o diferencial?',resposta:'Integrar contratação, compras e capacitação num lugar só, com reputação verificada, compatibilidade entre vaga e profissional e acompanhamento depois da contratação. É o que falta no WhatsApp e nos grupos de indicação.'},
+    {pergunta:'Onde e como vai começar?',resposta:'Em Brasília/DF, com um MVP enxuto primeiro e expansão depois. O ponto de equilíbrio estimado é de cerca de 22 clientes pagantes.'},
+    {pergunta:'Como eu testo o app?',resposta:'Abra chef-match-app.vercel.app no celular e escolha “Testar como” restaurante, profissional ou fornecedor. Entra com um clique, sem cadastro.'},
+    {pergunta:'Os números são reais?',resposta:'Os dados de mercado vêm da Abrasel e do Sebrae. Preços, metas e projeções são hipóteses do projeto acadêmico.'},
+    {pergunta:'E o risco trabalhista?',resposta:'A plataforma aproxima as partes e quem contrata formaliza a contratação. Se um dia a empresa fornecer mão de obra temporária, vai seguir a Lei 6.019/1974.'}
+  ];
+  var SUGESTOES=[FAQ[0].pergunta,FAQ[2].pergunta,FAQ[3].pergunta,FAQ[5].pergunta];
+  var abrir=document.getElementById('ast-abrir'),painel=document.getElementById('ast-painel'),fechar=document.getElementById('ast-fechar');
+  var msgs=document.getElementById('ast-msgs'),form=document.getElementById('ast-form'),campo=document.getElementById('ast-campo'),enviar=document.getElementById('ast-enviar');
+  var historico=[],iniciado=false,ocupado=false;
+
+  var cliente='';
+  try{cliente=localStorage.getItem('ast-cliente')||'';if(!cliente){cliente=Math.random().toString(36).slice(2,12);localStorage.setItem('ast-cliente',cliente)}}catch(e){cliente=cliente||Math.random().toString(36).slice(2,12)}
+
+  function rolar(){msgs.scrollTop=msgs.scrollHeight}
+  function bolha(texto,tipo){var d=document.createElement('div');d.className='ast-msg '+tipo;d.textContent=texto;msgs.appendChild(d);rolar();return d}
+  function chips(lista,aoClicar){var w=document.createElement('div');w.className='ast-chips';lista.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='ast-chip';b.textContent=t;b.addEventListener('click',function(){aoClicar(t)});w.appendChild(b)});msgs.appendChild(w);rolar()}
+  function responderPronta(p){bolha(p,'eu');var f=FAQ.filter(function(x){return x.pergunta===p})[0];bolha(f?f.resposta:'','ia')}
+  function modoReserva(){bolha('A IA está ocupada agora, mas olha as perguntas mais comuns:','ia');chips(FAQ.map(function(f){return f.pergunta}),responderPronta)}
+
+  function perguntar(texto){
+    texto=(texto||'').trim();if(!texto||ocupado)return;
+    ocupado=true;enviar.disabled=true;campo.value='';
+    bolha(texto,'eu');historico.push({papel:'usuario',texto:texto.slice(0,500)});
+    var dig=bolha('digitando…','ia digitando');
+    var ctrl=('AbortController' in window)?new AbortController():null;
+    var timer=setTimeout(function(){if(ctrl)ctrl.abort()},15000);
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mensagens:historico.slice(-6),cliente:cliente}),signal:ctrl?ctrl.signal:undefined})
+      .then(function(r){return r.json().then(function(j){if(!r.ok||!j||typeof j.resposta!=='string')throw new Error('falhou');return j.resposta})})
+      .then(function(resp){dig.remove();bolha(resp,'ia');historico.push({papel:'assistente',texto:resp})})
+      .catch(function(){dig.remove();historico.pop();modoReserva()})
+      .then(function(){clearTimeout(timer);ocupado=false;enviar.disabled=false});
+  }
+
+  function abrirPainel(){painel.hidden=false;abrir.hidden=true;abrir.setAttribute('aria-expanded','true');
+    if(!iniciado){iniciado=true;bolha('Oi! 👋 Sou o assistente do Chef’s Match. Pode perguntar qualquer coisa sobre o projeto. Algumas ideias:','ia');chips(SUGESTOES,perguntar)}
+    if(window.matchMedia('(min-width:601px)').matches)campo.focus()}
+  function fecharPainel(){painel.hidden=true;abrir.hidden=false;abrir.setAttribute('aria-expanded','false');abrir.focus()}
+  abrir.addEventListener('click',abrirPainel);
+  fechar.addEventListener('click',fecharPainel);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!painel.hidden)fecharPainel()});
+  form.addEventListener('submit',function(e){e.preventDefault();perguntar(campo.value)});
+})();
+</script>
+
 </html>
